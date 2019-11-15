@@ -10,7 +10,7 @@ pytest = "*"
 django-crispy-forms = "==1.7.2"
 pytz = "==2018.5"
 Django = "==2.1.11"
-Pillow = "==5.2.0"
+Pillow = "==6.2.0"
 
 [requires]
 python_version = "3.7"
