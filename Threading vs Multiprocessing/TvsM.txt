@@ -1,0 +1,17 @@
+Threading vs Multiprocessamento
+
+Threading:
+
+- Uma nova thread é spawnada dentro do processo existente
+- Startar uma thread é mais rápido do que iniciar um processo
+- Memória é compartilhada entre todas as threads
+- Mutexes normalmente necessário para controlar acesso a dados compartilhados
+- Um GIL (Global Interpreter Lock) para todas as threads
+
+Multiprocessamento:
+
+- Um novo processo é iniciado independente do primeiro processo
+- Startar um processo é mais lento do que iniciar uma thread
+- Memória não é compartilhada entre processos
+- Mutexes não necessário (a não ser que haja threading no novo processo)
+- Um GIL (Global Interpreter Lock) para cada processo

@@ -1,0 +1,29 @@
+.       - Qualquer caracter exceto nova linha
+\d      - Dígito (0-9)
+\D      - Não dígito (0-9)
+\w      - Caracter palavra (a-z, A-Z, 0-9, _)
+\W      - Não caracter palavra
+\s      - Espaço em branco (espaço, tab, nova linha)
+\S      - Não espaço em branco (espaço, tab, nova linha)
+
+\b      - Limite de Palavras
+\B      - Não Limite de Palavras
+^       - Início de uma String
+$       - Fim de uma String
+
+[]      - Matches caractéres em colchetes
+[^ ]    - Matches caractéres fora dos colchetes
+|       - Ou
+( )     - Grupo
+
+Quantifiers:
+*       - 0 ou Mais
++       - 1 ou Mais
+?       - 0 ou Um
+{3}     - Número Exato
+{3,4}   - Gama de Números (Mínimo, Máximo)
+
+
+#### Expressão Regular para Email ####
+
+[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+
