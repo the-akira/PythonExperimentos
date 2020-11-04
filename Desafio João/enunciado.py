@@ -1,3 +1,4 @@
+"""
 O PRIMEIRO DO RANKING
 
 Joãozinho está jogando fliperama e quer ser o primeiro no topo dos melhores e acompanhar o seu progresso. O jogo usa o modelo de classificação densa,
@@ -116,3 +117,4 @@ ______________________
 Lista: pontuacoes_do_joaozinho
 Exemplo de saída 2
 [6, 5, 4, 2, 1]
+"""
