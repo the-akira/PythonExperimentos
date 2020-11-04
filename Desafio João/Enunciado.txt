@@ -1,4 +1,4 @@
-O PRIMEIRO DO RANKING
+# O PRIMEIRO DO RANKING
 
 Joãozinho está jogando fliperama e quer ser o primeiro no topo dos melhores e acompanhar o seu progresso. O jogo usa o modelo de classificação densa,
 onde o jogador com a maior pontuação recebe a posição 1, e assim por diante. Jogadores que tiverem a mesma pontuação, recebem a mesma posição.
