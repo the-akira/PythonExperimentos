@@ -21,4 +21,3 @@ draw_hexagons('#4dc4d6',37,10,145)
 draw_hexagons('#f218eb',45,8,160)
 
 turtle.done()
-turtle.mainloop()

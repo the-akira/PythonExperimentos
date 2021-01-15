@@ -66,7 +66,7 @@ def cubic(x):
   return (x ** 3)
 
 def  main():
-  turtle.title('Graphs of Functions')
+  turtle.title('Gráfico de Funções')
   turtle.setup(800, 800, 0, 0)
   ttl = turtle.Turtle()
   ttl.pensize(2)

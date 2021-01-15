@@ -1,39 +1,52 @@
+# Importando o módulo Turtle
 import turtle
 
-t = turtle.Turtle()
+# Definindo o título da janela
+turtle.title('Meu Desenho')
 
-# Exemplos 
-# t.forward(100) # Move 100 pixels para direita
-# t.left(45) # Move em um ângulo de 45 graus
-# t.forward(100)
-# t.right(90)
-# t.forward(100)
+# Abrindo a tela de desenhos
+screen = turtle.Screen()
+screen.bgcolor('#967ee0')
+screen.setup(650,650)
 
-# Desenhando um Quadrado
+# Inicializando e configurando a tartaruga
+tartaruga = turtle.Turtle()
+tartaruga.shape('turtle') 
+tartaruga.color('purple') 
+tartaruga.shapesize(2,2,2)
+tartaruga.speed(1)
+tartaruga.pen(fillcolor="orange", pensize=4)
 
-t.color('red', 'green') # Altera a cor 
-t.begin_fill()
-t.forward(100)
-t.left(90)
-t.forward(100)
-t.left(90)
-t.forward(100)
-t.left(90)
-t.forward(100)
-t.end_fill()
+# Desenhando o primeiro círculo
+tartaruga.begin_fill()
+tartaruga.circle(150)
+tartaruga.end_fill()
+tartaruga.hideturtle()
 
-t.penup()
-t.forward(150)
-t.pendown()
+# Desenhando o segundo círculo
+tartaruga.begin_fill()
+tartaruga.circle(120)
+tartaruga.end_fill()
+tartaruga.hideturtle()
+tartaruga.dot(35)
 
-t.begin_fill()
-t.forward(100)
-t.left(90)
-t.forward(100)
-t.left(90)
-t.forward(100)
-t.left(90)
-t.forward(100)
-t.end_fill()
+# Transformando a tartaruga em um círculo
+tartaruga.shape('circle')
+tartaruga.showturtle()
 
+# Desenhando o triângulo
+tartaruga.begin_fill()
+tartaruga.rt(90)
+tartaruga.fd(170)
+tartaruga.dot(35)
+tartaruga.lt(40)
+tartaruga.fd(150)
+tartaruga.rt(130)
+tartaruga.fd(195)
+tartaruga.rt(130)
+tartaruga.fd(150)
+tartaruga.end_fill()
+tartaruga.hideturtle()
+
+# Finalizando o desenho
 turtle.done()
