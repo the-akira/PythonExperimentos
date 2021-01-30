@@ -154,12 +154,31 @@ O *output* do código será o seguinte:
 Podemos seguir uma lógica similar para desenhar um triângulo:
 
 ```python
-for _ in range(2):
-    t.left(120)
+for _ in range(3):
     t.fd(150)
-t.home()
+    t.left(120)
 ```
 
 Que nos trará o seguinte resultado:
 
 ![img](https://raw.githubusercontent.com/the-akira/PythonExperimentos/master/turtle/Imagens/triangle.png)
+
+A biblioteca turtle nos oferece um comando chamado de **circle()** que nos permite desenhar círculos:
+
+```python
+t.circle(80)
+```
+
+O número entre parênteses é o raio do círculo. Você pode aumentar ou diminuir o tamanho do círculo, alterando o valor de seu raio. Como *output* veremos um círculo:
+
+![img](https://raw.githubusercontent.com/the-akira/PythonExperimentos/master/turtle/Imagens/circle.png)
+
+Da mesma forma, podemos também desenhar um ponto, que nada mais é do que um círculo preenchido. Para esta tarefa devemos usar o comando **dot()**:
+
+```python
+t.dot(50)
+```
+
+Que nos apresentará:
+
+![img](https://raw.githubusercontent.com/the-akira/PythonExperimentos/master/turtle/Imagens/dot.png)
