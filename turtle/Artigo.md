@@ -46,7 +46,7 @@ turtle.hideturtle()
 
 Observe que ao executarmos este comando, ele fará com que a turtle desapareça, para fazermos com que ela apareça novamente, podemos usar o comando **Turtle()**.
 
-Em seguida, devemos inicializar uma variável **t**, que será usada em todo o programa para se referir à turtle:
+Em seguida, vamos inicializar uma variável **t**, que será usada em todo o programa para se referir à turtle:
 
 ```python
 t = turtle.Turtle()
@@ -104,7 +104,7 @@ Eventualmente obteremos o seguinte resultado:
 
 ![img](https://raw.githubusercontent.com/the-akira/PythonExperimentos/master/turtle/Imagens/commands.png)
 
-É possível também usar atalhos desses comandos:
+É possível também usar atalhos para estes comandos:
 
 - **t.rt()** para `t.right()`
 - **t.fd()** para `t.forward()`
@@ -134,3 +134,32 @@ t.home()
 ```
 
 Perceba que **home()** é apenas um atalho, o comando `t.goto(0,0)` teria o mesmo efeito.
+
+### Desenhando Formas Geométricas
+
+Podemos começar desenhando polígonos, que consistem em linhas retas conectadas em determinados ângulos.
+
+Com a ajuda de um **[for loop](https://github.com/the-akira/Python-Iluminado/blob/master/Capitulos/14.ForLoops.md)**, podemos facilmente desenhar um octógono:
+
+```python
+for _ in range(8):
+    t.rt(45)
+    t.fd(65)
+```
+
+O *output* do código será o seguinte:
+
+![img](https://raw.githubusercontent.com/the-akira/PythonExperimentos/master/turtle/Imagens/octagon.png)
+
+Podemos seguir uma lógica similar para desenhar um triângulo:
+
+```python
+for _ in range(2):
+    t.left(120)
+    t.fd(150)
+t.home()
+```
+
+Que nos trará o seguinte resultado:
+
+![img](https://raw.githubusercontent.com/the-akira/PythonExperimentos/master/turtle/Imagens/triangle.png)
