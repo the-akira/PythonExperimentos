@@ -38,17 +38,99 @@ Ao executarmos o comando acima, veremos que será aberta uma janela separada:
 
 ![img](https://raw.githubusercontent.com/the-akira/PythonExperimentos/master/turtle/Imagens/screen.png)
 
-Esta janela é chamada de tela. É onde podemos ver o *output* de nosso código. A pequena forma triangular preta no meio da tela é chamada de turtle.
+Esta janela é chamada de tela. É onde podemos ver o *output* de nosso código. A pequena forma triangular preta no meio da tela é chamada de turtle. É possível escondermos ela com o comando **hideturtle()**:
 
-Em seguida, devemos inicializar a variável **t**, que será usada em todo o programa para se referir à turtle:
+```python
+turtle.hideturtle()
+```
+
+Observe que ao executarmos este comando, ele fará com que a turtle desapareça, para fazermos com que ela apareça novamente, podemos usar o comando **Turtle()**.
+
+Em seguida, devemos inicializar uma variável **t**, que será usada em todo o programa para se referir à turtle:
 
 ```python
 t = turtle.Turtle()
 ```
 
-Finalmente temos a **tela** e a **turtle**. A tela atua como uma tela de pintura, enquanto a turtle atua como uma caneta. Podemos programar a turtle para se mover pela tela. A turtle tem certas características mutáveis, como **tamanho**, **cor** e **velocidade**. Ele sempre aponta para uma direção específica e se moverá nessa direção, a menos que digamos o contrário:
+Finalmente temos a **tela** e a **turtle**, que neste caso será referenciada pela variável **t**. A tela atua como uma tela de pintura, enquanto a turtle atua como uma caneta. Podemos programar a turtle para se mover pela tela. A turtle tem certas características mutáveis, como **tamanho**, **cor** e **velocidade**. Ele sempre aponta para uma direção específica e se moverá nessa direção, a menos que digamos o contrário:
 
 - Quando estiver para cima (**up**), significa que nenhuma linha será desenhada quando ela se mover.
 - Quando está para baixo (**down**), significa que uma linha será desenhada quando ela se mover.
 
 ## Programando com turtle
+
+Como já vimos, a turtle inicia na posição (0,0) no plano x-y e podemos obter sua posição atual através do comando position:
+
+```python
+t.position() # (0.00,0.00)
+```
+
+### Movendo a turtle
+
+É possível mover a turtle em quatro direções diferentes:
+
+- Forward (Para frente)
+- Backward (Para trás)
+- Left (Esquerda ou Anti-Horário)
+- Right (Direita ou Horário)
+
+Para compreendermos melhor estas ideias, vamos experimentar alguns comandos. 
+
+Começamos alterando a direção da turtle em **90 graus** para a **esquerda**:
+
+```python
+t.left(90)
+```
+
+Estamos agora apontando para o norte, vamos então nos mover **100 unidades** para frente:
+
+```python
+t.forward(100)
+```
+
+Novamente, vamos alterar a direção da turtle em **180 graus** para a **direita**:
+
+```python
+t.right(180)
+```
+
+Estamos agora apontando para o sul, vamos então nos mover **100 unidades** para trás:
+
+```python
+t.backward(100)
+```
+
+Eventualmente obteremos o seguinte resultado:
+
+![img](https://raw.githubusercontent.com/the-akira/PythonExperimentos/master/turtle/Imagens/commands.png)
+
+É possível também usar atalhos desses comandos:
+
+- **t.rt()** para `t.right()`
+- **t.fd()** para `t.forward()`
+- **t.lt()** para `t.left()`
+- **t.bk()** para `t.backward()`
+
+Podemos também traçar uma linha de nossa posição atual para qualquer outra posição arbitrária na tela. Isso é feito com o auxílio das coordenadas:
+
+![img](https://raw.githubusercontent.com/the-akira/PythonExperimentos/master/turtle/Imagens/PythonTurtle.png)
+
+A tela é dividida em quatro quadrantes. O ponto onde a tartaruga é inicialmente posicionada no início do programa é (0,0). Este ponto é chamado de **Home**. 
+
+Para mover a tartaruga para qualquer outra área da tela, podemos usar o comando **goto()** e inserir as coordenadas desta forma:
+
+```python
+t.goto(-100,100)
+```
+
+Nossa turtle irá se mover diretamente ao ponto (-100,100), desenhando uma linha:
+
+![img](https://raw.githubusercontent.com/the-akira/PythonExperimentos/master/turtle/Imagens/goto.png)
+
+Para fazermos a turtle retornar à posição **home**, podemos usar o seguinte comando:
+
+```python
+t.home()
+```
+
+Perceba que **home()** é apenas um atalho, o comando `t.goto(0,0)` teria o mesmo efeito.
