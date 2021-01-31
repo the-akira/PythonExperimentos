@@ -182,3 +182,42 @@ t.dot(50)
 Que nos apresentará:
 
 ![img](https://raw.githubusercontent.com/the-akira/PythonExperimentos/master/turtle/Imagens/dot.png)
+
+### Comandos Úteis
+
+#### Alterando a Cor da Tela
+
+Por padrão, turtle sempre abre uma tela com um fundo branco. Entretanto, podemos alterar a cor da tela a qualquer momento usando o seguinte comando:
+
+```python
+turtle.bgcolor('gray')
+```
+
+Imediamente podemos observar que a cor de nossa tela irá alterar:
+
+![img](https://raw.githubusercontent.com/the-akira/PythonExperimentos/master/turtle/Imagens/color.png)
+
+Neste caso estamos usando a cor *gray* (cinza), também podemos usar cores como *green* (verde) e *red* (vermelho). Neste site você pode ver uma lista com diversos nomes de cores: [Trinket.io](https://trinket.io/docs/colors)
+
+Além disso, é possível informarmos o [valor hexadecimal](https://en.wikipedia.org/wiki/Web_colors) de uma cor. Portanto, se quisermos retornar para o branco, podemos digitar um dos seguintes comandos:
+
+```python
+turtle.bgcolor('#ffffff')
+turtle.bgcolor('white')
+```
+
+Ambos são válidos e produzem o mesmo efeito.
+
+#### Alterando o Título da Tela
+
+É possível também alterarmos o título da nossa tela com o comando **title()**. Por exemplo:
+
+```python
+turtle.title("Aprendendo Python com a biblioteca Turtle!")
+```
+
+Veja que o texto de nossa barra de título será alterado:
+
+![img](https://raw.githubusercontent.com/the-akira/PythonExperimentos/master/turtle/Imagens/title.png)
+
+Dessa maneira, podemos alterar o cabeçalho da tela de acordo com a nossa preferência.
