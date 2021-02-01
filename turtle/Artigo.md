@@ -6,13 +6,13 @@
 
 **Turtle graphics** é uma forma popular de apresentar a programação às crianças. Era parte da linguagem de programação [Logo](https://en.wikipedia.org/wiki/Logo_(programming_language)) desenvolvida por Wally Feurzeig, Seymour Papert e Cynthia Solomon em 1967.
 
-Imagine uma tartaruga robótica começando em **(0, 0)** no plano x-y. Depois de importar turtle (`import turtle`), é possível dar comandos a ela, como por exemplo `turtle.forward(100)`, e ela se move (na tela!) 100 pixels na direção para a qual está voltada, desenhando uma linha conforme se move. Dar a ela o comando `turtle.right(90)`, faz ela girar 90 graus no local no sentido horário.
+Imagine uma **tartaruga robótica** começando em **(0, 0)** no [plano x-y](https://en.wikipedia.org/wiki/Cartesian_coordinate_system). Depois de importar turtle (`import turtle`), é possível dar comandos a ela, como por exemplo `turtle.forward(100)`, e então ela se move (na tela!) 100 pixels na direção para a qual está voltada, desenhando uma linha conforme se move. Dar a ela o comando `turtle.right(90)`, faz ela girar 90 graus no local no sentido horário.
 
 Ao combinar esses comandos e outros semelhantes, formas e imagens complexas podem ser facilmente desenhadas.
 
 ## A Biblioteca Turtle
 
-[turtle](https://docs.python.org/3/library/turtle.html) é uma biblioteca Python pré-instalada que permite aos usuários criar imagens e formas fornecendo-lhes uma tela de pintura virtual. A caneta na tela que usamos para desenhar é chamada de **turtle** e é isso que dá nome à biblioteca. Resumindo, a biblioteca Python turtle ajuda os novos programadores a ter uma ideia de como é a programação com Python de uma forma divertida e interativa.
+[turtle](https://docs.python.org/3/library/turtle.html) é uma biblioteca Python pré-instalada que permite aos usuários criar imagens e formas fornecendo-lhes uma **tela de pintura virtual**. A **caneta** na tela que usamos para desenhar é chamada de **turtle** e é isso que dá nome à biblioteca. Em resumo, a biblioteca Python turtle ajuda os novos programadores a ter uma ideia de como é a programação com Python de uma forma divertida e interativa.
 
 Uma vez que a biblioteca turtle já é construída no Python, então não precisamos instalar nenhum pacote, apenas devemos ter o Python em nossa máquina e então importá-la em nosso ambiente. 
 
@@ -40,7 +40,15 @@ Ao executarmos o comando acima, veremos que será aberta uma janela separada:
 
 ![img](https://raw.githubusercontent.com/the-akira/PythonExperimentos/master/turtle/Imagens/screen.png)
 
-Esta janela é chamada de tela. É onde podemos ver o *output* de nosso código. A pequena forma triangular preta no meio da tela é chamada de turtle. É possível escondermos ela com o comando **hideturtle()**:
+Esta janela é chamada de tela. É onde podemos ver o *output* de nosso código. 
+
+É possível alterarmos a dimensão da tela com o comando **setup**, por exemplo, se quisermos deixá-la **400x400**:
+
+```python
+s.setup(400,400)
+``` 
+
+A pequena forma triangular preta no meio da tela é chamada de turtle. É possível escondermos ela com o comando **hideturtle()**:
 
 ```python
 turtle.hideturtle()
@@ -56,8 +64,8 @@ t = turtle.Turtle()
 
 Finalmente temos a **tela** e a **turtle**, que neste caso será referenciada pela variável **t**. A tela atua como uma tela de pintura, enquanto a turtle atua como uma caneta. Podemos programar a turtle para se mover pela tela. A turtle tem certas características mutáveis, como **tamanho**, **cor** e **velocidade**. Ele sempre aponta para uma direção específica e se moverá nessa direção, a menos que digamos o contrário:
 
-- Quando estiver para cima (**up**), significa que nenhuma linha será desenhada quando ela se mover.
-- Quando está para baixo (**down**), significa que uma linha será desenhada quando ela se mover.
+- Quando a caneta estiver para cima (**up**), significa que nenhuma linha será desenhada quando ela se mover.
+- Quando a caneta está para baixo (**down**), significa que uma linha será desenhada quando ela se mover.
 
 ## Programando com Turtle
 
@@ -172,7 +180,7 @@ A biblioteca turtle nos oferece um comando chamado de **circle()** que nos permi
 t.circle(80)
 ```
 
-O número entre parênteses é o raio do círculo. Você pode aumentar ou diminuir o tamanho do círculo, alterando o valor de seu raio. Como *output* veremos um círculo:
+O número entre parênteses é o raio do círculo. Podemos aumentar ou diminuir o tamanho do círculo, alterando o valor de seu raio. Como *output* veremos um círculo:
 
 ![img](https://raw.githubusercontent.com/the-akira/PythonExperimentos/master/turtle/Imagens/circle.png)
 
@@ -379,11 +387,11 @@ t.speed(10)
 
 A velocidade que podemos oferecer varia entre **0** e **10**, se o *input* for um número maior que 10 ou menor que 0.5, a velocidade é definida como 0. Speedstrings são mapeados para valores de velocidade da seguinte forma:
 
-- "Mais rápido": 0
-- "Rápido": 10
-- "Normal": 6
-- "Lento": 3
-- "Mais lento": 1
+- "Mais rápido": **0**
+- "Rápido": **10**
+- "Normal": **6**
+- "Lento": **3**
+- "Mais lento": **1**
 
 Importante lembrarmos que se a velocidade for igual a 0, então não haverá animação.
 
@@ -391,8 +399,8 @@ Importante lembrarmos que se a velocidade for igual a 0, então não haverá ani
 
 Imagine agora que desejamos atribuir as seguintes características para a nossa turtle:
 
-- **Cor da Caneta**: roxo
-- **Cor de Preenchimento**: rosa
+- **Cor da Caneta**: roxo (purple)
+- **Cor de Preenchimento**: rosa (pink)
 - **Tamanho da Caneta**: 6
 - **Velocidade da Caneta**: 2
 
@@ -501,17 +509,21 @@ Resultado:
 
 Código-fonte: [spiral.py](https://github.com/the-akira/PythonExperimentos/blob/master/turtle/spiral.py)
 
+Resultado:
+
 ![img](https://raw.githubusercontent.com/the-akira/PythonExperimentos/master/turtle/Imagens/spiral.png)
 
 #### Vortex
 
 Código-fonte: [vortex.py](https://github.com/the-akira/PythonExperimentos/blob/master/turtle/vortex.py)
 
+Resultado:
+
 ![img](https://raw.githubusercontent.com/the-akira/PythonExperimentos/master/turtle/Imagens/vortex.png)
 
 ### Conclusão
 
-Através deste tutorial fomos capazes de entender os fundamentos da biblioteca turtle, nos possibilitando assim criar diversos desenhos com a linguagem Python.
+Através deste tutorial fomos capazes de entender os fundamentos da biblioteca turtle, nos possibilitando assim, criar diversos desenhos com a linguagem Python.
 
 Além disso, turtle pode ser muito útil para o ensino de programação!
 
