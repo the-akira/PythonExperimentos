@@ -460,3 +460,66 @@ t.reset()
 ```
 
 Isso limpa a tela e leva a turtle de volta à sua posição inicial. As configurações padrão, como tamanho, forma, cor e outras características da turtle, também serão restauradas.
+
+#### Deixando Marcas
+
+Temos a opção de deixar uma marca da turtle na tela, que nada mais é do que uma "pegada" da tartaruga. Vejamos um exemplo:
+
+```python
+t.stamp()
+t.fd(70)
+t.stamp()
+t.left(90)
+t.fd(70)
+```
+
+Nosso *output* será o seguinte:
+
+![img](https://raw.githubusercontent.com/the-akira/PythonExperimentos/master/turtle/Imagens/stamps.png)
+
+Perceba que ao usarmos o comando **stamp()** nos é retornado um número, este número é chamado de **stamp ID** e podemos usá-lo para remover uma "pegada" da turtle, por exemplo:
+
+```python
+t.clearstamp(13)
+```
+
+Este comando irá remover a marca ou "pegada" de `ID = 13`.
+
+### Exemplos de Artes
+
+A seguir podemos ver alguns exemplos de artes, construídas com o poder da biblioteca turtle.
+
+#### Hexágonos
+
+Código-fonte: [hexagons.py](https://github.com/the-akira/PythonExperimentos/blob/master/turtle/hexagons.py)
+
+Resultado:
+
+![img](https://raw.githubusercontent.com/the-akira/PythonExperimentos/master/turtle/Imagens/hexagon.png)
+
+#### Espiral
+
+Código-fonte: [spiral.py](https://github.com/the-akira/PythonExperimentos/blob/master/turtle/spiral.py)
+
+![img](https://raw.githubusercontent.com/the-akira/PythonExperimentos/master/turtle/Imagens/spiral.png)
+
+#### Vortex
+
+Código-fonte: [vortex.py](https://github.com/the-akira/PythonExperimentos/blob/master/turtle/vortex.py)
+
+![img](https://raw.githubusercontent.com/the-akira/PythonExperimentos/master/turtle/Imagens/vortex.png)
+
+### Conclusão
+
+Através deste tutorial fomos capazes de entender os fundamentos da biblioteca turtle, nos possibilitando assim criar diversos desenhos com a linguagem Python.
+
+Além disso, turtle pode ser muito útil para o ensino de programação!
+
+Para mais detalhes, veja as referências usadas neste artigo.
+
+### Referências
+
+- [turtle Docs](https://docs.python.org/3/library/turtle.html)
+- [The Beginner's Guide to Python Turtle](https://realpython.com/beginners-guide-python-turtle/)
+- [Turtle Programming in Python](https://www.geeksforgeeks.org/turtle-programming-python/)
+- [Python and Turtle](https://pythonturtle.academy/)
