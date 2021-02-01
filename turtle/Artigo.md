@@ -1,5 +1,7 @@
 # Desenhando com o Módulo Python Turtle
 
+![img](https://raw.githubusercontent.com/the-akira/PythonExperimentos/master/turtle/Imagens/AvatarTurtle.png)
+
 ## Introdução
 
 **Turtle graphics** é uma forma popular de apresentar a programação às crianças. Era parte da linguagem de programação [Logo](https://en.wikipedia.org/wiki/Logo_(programming_language)) desenvolvida por Wally Feurzeig, Seymour Papert e Cynthia Solomon em 1967.
@@ -59,10 +61,11 @@ Finalmente temos a **tela** e a **turtle**, que neste caso será referenciada pe
 
 ## Programando com Turtle
 
-Como já vimos, a turtle inicia na posição (0,0) no plano x-y e podemos obter sua posição atual através do comando position:
+Como já vimos, a turtle inicia na posição (0,0) no plano x-y e podemos obter sua posição atual através do comando **position** ou **pos**:
 
 ```python
 t.position() # (0.00,0.00)
+t.pos() # (0.00,0.00)
 ```
 
 ### Movendo a Turtle
@@ -362,3 +365,98 @@ turtle.done()
 Como *output* temos o seguinte desenho:
 
 ![img](https://raw.githubusercontent.com/the-akira/PythonExperimentos/master/turtle/Imagens/tutorial.png)
+
+Observe que neste exemplo também utilizamos os comandos **speed()** e **pen()** que veremos em mais detalhes a seguir.
+
+#### Alterando a Velocidade da Caneta
+
+A turtle normalmente se move em um ritmo moderado. Se quisermos diminuir ou aumentar a velocidade para fazer ela se mover mais devagar ou mais rápido, podemos fazer isso com o comando **speed()**:
+
+```python
+t.speed(0)
+t.speed(10)
+```
+
+A velocidade que podemos oferecer varia entre **0** e **10**, se o *input* for um número maior que 10 ou menor que 0.5, a velocidade é definida como 0. Speedstrings são mapeados para valores de velocidade da seguinte forma:
+
+- "Mais rápido": 0
+- "Rápido": 10
+- "Normal": 6
+- "Lento": 3
+- "Mais lento": 1
+
+Importante lembrarmos que se a velocidade for igual a 0, então não haverá animação.
+
+#### Customizando em uma Linha
+
+Imagine agora que desejamos atribuir as seguintes características para a nossa turtle:
+
+- **Cor da Caneta**: roxo
+- **Cor de Preenchimento**: rosa
+- **Tamanho da Caneta**: 6
+- **Velocidade da Caneta**: 2
+
+Podemos setar todas essas configurações em uma única linha com o comando **pen()**:
+
+```python
+t.pen(pencolor="purple", fillcolor="pink", pensize=6, speed=2)
+t.begin_fill()
+t.circle(70)
+t.end_fill()
+```
+
+Como resultado vamos obter a seguinte figura:
+
+![img](https://raw.githubusercontent.com/the-akira/PythonExperimentos/master/turtle/Imagens/pencustom.png)
+
+Esta única linha de código mudou toda a caneta, sem que precisemos alterar cada característica individualmente.
+
+#### Pegando e Soltando a Caneta
+
+Às vezes, podemos querer mover a turtle para outro ponto da tela sem desenhar nada na própria tela. Para esta tarefa podemos usar o comando **penup()**, se eventualmente quisermos voltar novamente a desenhar, podemos usar o comando **pendown()**, que irá fixar novamente a caneta à tela de desenho.
+
+Vejamos um exemplo:
+
+```python
+t.penup()
+t.fd(50)
+t.lt(90)
+t.pendown()
+t.bk(100)
+```
+
+Começamos levantando a caneta, em seguida nos movemos 50 unidades para frente (perceba que não teremos desenho, pois a caneta está levantada), depois alteramos a direção da turtle em 90 graus para a esquerda, finalmente colocamos a caneta de volta à tela e nos movemos 100 unidades para trás (dessa vez desenhando). Nosso resultado é:
+
+![img](https://raw.githubusercontent.com/the-akira/PythonExperimentos/master/turtle/Imagens/penUpDown.png)
+
+Estes comandos podem ser muito úteis quando quisermos alternar entre não-desenhar e desenhar.
+
+#### Desfazendo Alterações
+
+Durante nossos desenhos é possível que cometamos algum erro, porém não há necessidade de preocupação, pois a biblioteca turtle nos fornece a opção de desfazer o que foi feito. Para isso devemos usar o seguinte comando:
+
+```python
+t.undo()
+```
+
+Isso desfaz o último comando executado.
+
+#### Limpando a Tela
+
+No momento, provavelmente temos muitas coisas na tela desde que iniciamos este tutorial. Para abrir espaço para mais, podemos digitar o seguinte comando:
+
+```python
+t.clear()
+```
+
+Isso limpará a tela para que possamos continuar a desenhar. Observe aqui que as variáveis não mudarão e a turtle permanecerá na mesma posição. Se tivermos outras turtles na tela além da turtle original, seus desenhos não serão apagados, a menos que indiquemos especificamente no código.
+
+#### Resetando o Ambiente
+
+Também temos a opção de começar do zero com um comando de redefinição. A tela será limpa e as configurações da turtle serão restauradas para seus parâmetros padrão. Tudo que precisamos fazer é digitar o seguinte comando:
+
+```python
+t.reset()
+```
+
+Isso limpa a tela e leva a turtle de volta à sua posição inicial. As configurações padrão, como tamanho, forma, cor e outras características da turtle, também serão restauradas.
