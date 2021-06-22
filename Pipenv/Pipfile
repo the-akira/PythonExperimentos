@@ -9,7 +9,7 @@ pytest = "*"
 [packages]
 django-crispy-forms = "==1.7.2"
 pytz = "==2018.5"
-Django = "==2.2.21"
+Django = "==2.2.24"
 Pillow = "==8.1.1"
 
 [requires]
