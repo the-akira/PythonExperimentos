@@ -17,9 +17,9 @@ print(nova_string)
 # 4. Checando se uma determinada string é palíndrome ou não
 palavra = 'abcba'
 if palavra == palavra[::-1]:
-	print('palindrome')
+    print('palindrome')
 else:
-	print('not palindrome')
+    print('not palindrome')
 
 # 5. Descubra se duas Strings são Anagramas
 from collections import Counter
@@ -30,7 +30,7 @@ cnt_1, cnt_2, cnt_3  = Counter(str_1), Counter(str_2), Counter(str_3)
 if cnt_1 == cnt_2:
     print('1 and 2 anagram')
 if cnt_1 == cnt_3:
-	print('1 and 3 anagram')
+    print('1 and 3 anagram')
 
 # 6. Amostragem de dados de uma Lista
 import secrets 

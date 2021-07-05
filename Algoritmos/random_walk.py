@@ -21,33 +21,33 @@ def random_walk(n):
     return (x, y)
 
 for i in range(25):
-	walk = random_walk(10)
-	print(walk, "Distância de nossa casa = ", abs(walk[0]) + abs(walk[1]))
+    walk = random_walk(10)
+    print(walk, "Distância de nossa casa = ", abs(walk[0]) + abs(walk[1]))
 
 def random_walk_v2(n):
-	'''
-	Retorna as coordenadas depois de caminhar 'n' blocos
-	'''
-	x, y = 0, 0
-	for i in range(n):
-		(dx, dy) = random.choice([(0,1),(0,-1),(1,0),(-1,0)]) # Diferença em x / Diferença em y
-		x += dx
-		y += dy
-	return (x, y)
+    '''
+    Retorna as coordenadas depois de caminhar 'n' blocos
+    '''
+    x, y = 0, 0
+    for i in range(n):
+        (dx, dy) = random.choice([(0,1),(0,-1),(1,0),(-1,0)]) # Diferença em x / Diferença em y
+        x += dx
+        y += dy
+    return (x, y)
 
 for i in range(25):
-	caminhada = random_walk_v2(10)
-	print(caminhada, "Distância de nossa casa 2 = ", abs(caminhada[0]) + abs(caminhada[1]))
+    caminhada = random_walk_v2(10)
+    print(caminhada, "Distância de nossa casa 2 = ", abs(caminhada[0]) + abs(caminhada[1]))
 
 # Simulação de Monte Carlo
 número_de_caminhadas = 25000
 
 for comprimento_caminhada in range(1,31):
-	sem_transporte = 0 # Número de caminhadas 4 ou poucos blocos de sua casa
-	for i in range(número_de_caminhadas):
-		(x, y) = random_walk_v2(comprimento_caminhada)
-		distancia = abs(x) + abs(y)
-		if distancia <= 4:
-			sem_transporte += 1
-	percentagem_sem_transporte = float(sem_transporte) / número_de_caminhadas
-	print("Tamanho da caminhada = ", comprimento_caminhada, "chance % de não transporte =", 100*percentagem_sem_transporte )
+    sem_transporte = 0 # Número de caminhadas 4 ou poucos blocos de sua casa
+    for i in range(número_de_caminhadas):
+        (x, y) = random_walk_v2(comprimento_caminhada)
+        distancia = abs(x) + abs(y)
+        if distancia <= 4:
+            sem_transporte += 1
+    percentagem_sem_transporte = float(sem_transporte) / número_de_caminhadas
+    print("Tamanho da caminhada =", comprimento_caminhada, "chance % de não transporte =", 100*percentagem_sem_transporte )

@@ -2,13 +2,13 @@ import statistics
 
 # Mapeando de Celsius para Fahrenheit
 celsius = [
-	('Berlin', 29), 
-	('Cairo', 36), 
-	('Buenos Aires', 19), 
-	('Rio de Janeiro', 39), 
-	('Tokyo', 27), 
-	('New York', 28), 
-	('Beijing', 32)
+    ('Berlin', 29), 
+    ('Cairo', 36), 
+    ('Buenos Aires', 19), 
+    ('Rio de Janeiro', 39), 
+    ('Tokyo', 27), 
+    ('New York', 28), 
+    ('Beijing', 32)
 ]
 celsius_para_fahrenheit = lambda dados: (dados[0], (9/5)*dados[1] + 32)
 print(list(map(celsius_para_fahrenheit,celsius)))

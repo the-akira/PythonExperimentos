@@ -27,6 +27,6 @@ def teste_primo(n):
 
 t0 = time.time()
 for n in range(1, 100_000):
-	print(n, teste_primo(n))
+    print(n, teste_primo(n))
 t1 = time.time()
 print(f"Tempo necessário: {t1 - t0}")

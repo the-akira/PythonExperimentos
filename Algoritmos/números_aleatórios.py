@@ -29,4 +29,4 @@ for i in range(5):
 # Pedra, Papel e Tesoura
 lista = ['pedra', 'papel', 'tesoura']
 for i in range(5):
-	print(random.choice(lista))
+    print(random.choice(lista))
