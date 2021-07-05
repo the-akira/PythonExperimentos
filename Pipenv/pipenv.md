@@ -82,4 +82,3 @@
 - import os
 - os.environ['SECRET_KEY']
 - Sempre lembrar de adicionar .env ao .gitignore
-
