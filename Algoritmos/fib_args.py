@@ -1,5 +1,12 @@
 import argparse
 
+"""
+Exemplos de uso:
+python fib_args.py --num 6 -v
+python fib_args.py -n 8
+python fib_args.py -n 10 --quiet -o
+"""
+
 def fib(n):
     a, b = 0, 1
     for i in range(n):
