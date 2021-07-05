@@ -3,6 +3,7 @@ Elementos comuns em dois arrays ordenados
 Retorna os elementos comuns entre dois arrays ordenados de inteiros (ordem ascendente)
 Exemplo: os elementos comuns entre [1,3,4,6,7,9] e [1,2,4,5,9,10] são [1,4,9]
 """
+
 def elementos_comuns(a,b):
     # Definimos os ponteiros
     p1, p2, resultado = 0, 0, []

@@ -1,6 +1,7 @@
 """
 Dado um array, quais são os elementos que ocorrem com mais frequência
 """
+
 def elemento_mais_frequente(lista):
     contador, contador_max, item_max = {}, 0, None
     for i in lista:

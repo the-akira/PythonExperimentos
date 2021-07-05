@@ -1,6 +1,6 @@
 import random
 
-# Função que simula a caminhada aleatória
+# Simulação de caminhada aleatória (random walk)
 
 def random_walk(n):
     '''

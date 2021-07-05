@@ -70,7 +70,7 @@ def dict_to_xml(tag, d):
 pokémon = {'nome': 'pikachu', 'tipo': 'eletrico'}
 XML = dict_to_xml(x, pokémon)
 for x in XML:
-	print(x.text)
+    print(x.text)
 
 # Mapeando duas listas em um dicionário
 keys = ['red', 'green', 'blue']

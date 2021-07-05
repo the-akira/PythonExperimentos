@@ -1,4 +1,4 @@
-'''
+"""
 Quick Sort é recursivo (método que chama a si mesmo)
 Algoritmo de dividir para conquistar
 Muito eficiente para grandes conjuntos de dados
@@ -6,7 +6,7 @@ Muito eficiente para grandes conjuntos de dados
 Pior caso é O(n^2)
 Médio caso é O(n log n)
 Perfomance depende em maior parte na seleção do pivot
-'''
+"""
 
 def quick_sort(lista):
    quick_sort_helper(lista,0,len(lista)-1)
