@@ -4,28 +4,24 @@ from sqlalchemy.orm import sessionmaker, relationship
 
 Base = declarative_base()
 
-class User(Base):
-	__tablename__ = 'person'
+class Usuário(Base):
+    __tablename__ = 'usuário'
 
-	id = Column('id', Integer, primary_key=True)
-	username = Column('username', String, unique=True)
+    id = Column('id', Integer, primary_key=True)
+    nome = Column('nome', String, unique=True)
 
-#engine = create_engine('sqlite:///:memory:', echo=True)
-engine = create_engine('sqlite:///users.db', echo=True)
+engine = create_engine('sqlite:///usuários.db', echo=True)
 Base.metadata.create_all(bind=engine)
 Session = sessionmaker(bind=engine)
-
 session = Session()
-# user = User()
-# user.id = 0
-# user.username = 'akira'
+user = Usuário()
+user.id = 0
+user.nome = 'akira'
+session.add(user)
+session.commit()
 
-# session.add(user)
-# session.commit()
-
-users = session.query(User).all()
-for user in users:
-	print(user.username, user.id)
+usuários = session.query(Usuário).all()
+for usuário in usuários:
+    print(f'Nome: {usuário.nome} | ID: {usuário.id}')
 
 session.close()
-

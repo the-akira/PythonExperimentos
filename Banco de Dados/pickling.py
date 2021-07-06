@@ -1,31 +1,33 @@
 import pickle
 
 class Animal:
-	def __init__(self, name, species):
-		self.name = name 
-		self.species = species 
+    def __init__(self, nome, espécie):
+        self.nome = nome 
+        self.espécie = espécie 
 
-	def __repr__(self):
-		return f'{self.name} é um {self.species}'
+    def __repr__(self):
+        return f'{self.nome} é um {self.espécie}'
 
-	def make_sound(self, sound):
-		print(f'esse animal diz {sound}')
+    def fazer_som(self, som):
+        print(f'esse animal diz {som}')
 
-class Cat(Animal):
-	def __init__(self, name, breed, toy):
-		super().__init__(name, species='Cat')
-		self.breed = breed 
-		self.toy = toy 
+class Gato(Animal):
+    def __init__(self, nome, raça, brinquedo):
+        super().__init__(nome, espécie='Gato')
+        self.raça = raça 
+        self.brinquedo = brinquedo 
 
-	def play(self):
-		print(f'{self.name} brinca com {self.toy}')
+    def brincar(self):
+        print(f'{self.nome} brinca com {self.brinquedo}')
 
-# blue = Cat('Blue', 'Siamês', 'Cordinha')
+blue = Gato('Blue', 'Siamês', 'Cordinha')
+brown = Gato('Brown', 'Persa', 'Peixinho')
 
-# with open('animais.pickle', 'wb') as file:
-# 	pickle.dump(blue, file)
+with open('animais.pkl', 'wb') as file:
+    pickle.dump(blue, file)
+    pickle.dump(brown, file)
 
-with open('animais.pickle', 'rb') as file: 
-	blue = pickle.load(file)
-	print(blue)
-	print(blue.play())
+with open('animais.pkl', 'rb') as file: 
+    blue = pickle.load(file)
+    print(blue)
+    blue.brincar()

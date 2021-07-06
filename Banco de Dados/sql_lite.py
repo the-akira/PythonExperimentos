@@ -1,66 +1,49 @@
 import sqlite3
-from employee import Employee 
+from pessoa import Pessoa 
 
-# conn = sqlite3.connect(':memory:') # Banco de dados em memória
+conn = sqlite3.connect('pessoa.db')
+cursor = conn.cursor()
 
-conn = sqlite3.connect('employee.db')
+cursor.execute("""CREATE TABLE Pessoa (nome text, sobrenome text, idade integer)""")
 
-c = conn.cursor()
+def insert_pessoa(pessoa):
+    with conn:
+        cursor.execute("INSERT INTO Pessoa VALUES (:nome, :sobrenome, :idade)", {'nome': pessoa.nome, 'sobrenome': pessoa.sobrenome, 'idade': pessoa.idade})
 
-#c.execute("""CREATE TABLE employees (
-#		   first text,
-#		   last text,
-#		   pay integer	
-#		  ) """)
+def get_pessoa_por_sobrenome(sobrenome):
+    cursor.execute("SELECT * FROM Pessoa WHERE sobrenome=:sobrenome", {'sobrenome': sobrenome})
+    return cursor.fetchall()
 
-def insert_emp(emp):
-	with conn:
-		c.execute("INSERT INTO employees VALUES (:first, :last, :pay)", {'first': emp.first, 'last': emp.last, 'pay': emp.pay})
+def update_idade(pessoa, idade):
+    with conn:
+        cursor.execute("""UPDATE Pessoa SET idade = :idade WHERE nome = :nome AND sobrenome = :sobrenome""", {'nome': pessoa.nome, 'sobrenome': pessoa.sobrenome, 'idade': idade})
 
-def get_emp_by_name(lastname):
-	c.execute("SELECT * FROM employees WHERE last=:last", {'last': lastname})
-	return c.fetchall()
+def remove_pessoa(pessoa):
+    with conn:
+        cursor.execute("DELETE from Pessoa WHERE nome = :nome AND sobrenome = :sobrenome", {'nome': pessoa.nome, 'sobrenome': pessoa.sobrenome})
 
-def update_pay(emp, pay):
-	with conn:
-		c.execute("""UPDATE employees SET pay = :pay WHERE first = :first AND last = :last""", {'first': emp.first, 'last': emp.last, 'pay': pay})
+pessoa = Pessoa('Gabriel', 'Felippe', 18)
+persona = Pessoa('Rafael', 'Miguel', 20)
+print(pessoa.nome)
+print(pessoa.sobrenome)
+print(pessoa.idade)
 
-def remove_emp(emp):
-	with conn:
-		c.execute("DELETE from employees WHERE first = :first AND last = :last", {'first': emp.first, 'last': emp.last})
+cursor.execute("INSERT INTO Pessoa VALUES (?, ?, ?)", (pessoa.nome, pessoa.sobrenome, pessoa.idade))
+conn.commit()
 
-emp_1 = Employee('John', 'Eduardo', 8000)
-emp_2 = Employee('Maria', 'Paula', 2000)
+cursor.execute("INSERT INTO Pessoa VALUES (:nome, :sobrenome, :idade)", {'nome': persona.nome, 'sobrenome': persona.sobrenome, 'idade': persona.idade})
+conn.commit()
 
-#print(emp_1.first)
-#print(emp_1.last)
-#print(emp_1.pay)
+cursor.execute("SELECT * FROM Pessoa WHERE sobrenome=?", ('Felippe',))
+print(cursor.fetchall())
 
-#c.execute("INSERT INTO employees VALUES (?, ?, ?)", (emp_1.first, emp_1.last, emp_1.pay))
+cursor.execute("SELECT * FROM Pessoa WHERE sobrenome=:sobrenome", {'sobrenome': 'Miguel'})
+print(cursor.fetchall())
 
-#conn.commit()
-
-#c.execute("INSERT INTO employees VALUES (:first, :last, :pay)", {'first': emp_2.first, 'last': emp_2.last, 'pay': emp_2.pay})
-
-#conn.commit()
-
-#c.execute("SELECT * FROM employees WHERE last=?", ('Felippe',))
-
-#print(c.fetchall())
-
-#c.execute("SELECT * FROM employees WHERE last=:last", {'last': 'Paula'})
-
-#print(c.fetchall())
-
-#conn.commit()
-
-#conn.close()
-
-insert_emp(emp_1)
-insert_emp(emp_2)
-update_pay(emp_2, 95000)
-remove_emp(emp_1)
-emps = get_emp_by_name('Paula')
-print(emps)
-
+insert_pessoa(pessoa)
+insert_pessoa(persona)
+update_idade(persona, 25)
+remove_pessoa(pessoa)
+pessoas = get_pessoa_por_sobrenome('Miguel')
+print(pessoas)
 conn.close()
