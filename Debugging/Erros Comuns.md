@@ -2,12 +2,13 @@
 
 ## SyntaxError
 
-- Erro que ocorre quando Python encontra alguma sintáxe incorreta (algo que ele não consegue fazer o parse)
-- Usualmente ocorre por erros de digitação ou pela falta de conhecimento da linguagem
-- Exemplo:
+- Erro que ocorre quando Python encontra alguma sintaxe incorreta (algo que ele não consegue fazer o **[parsing](https://en.wikipedia.org/wiki/Parsing)**).
+- Usualmente ocorre por erros de digitação ou pela falta de conhecimento da linguagem.
+
+#### Exemplo:
 
 ```python
-def first:
+def func:
 
 None = 1
 
@@ -16,45 +17,54 @@ return
 
 ## NameError
 
-- Ocorre quando a variável não está definida, em outras palavras, nenhum valor foi atribuído a ela
-- Exemplo:
+- Ocorre quando a variável não está definida, em outras palavras, nenhum valor foi atribuído a ela.
+
+#### Exemplo:
 
 ```python
-teste
+nome
 ```
 ## TypeError
 
-- Ocorre quando é aplicado a uma operação ou função a um tipo errado
-- Python não pode interpretar uma operação em dois tipos de dados
-- Exemplo: 
+- Ocorre quando uma operação ou função é aplicado a um tipo errado.
+- Python pode não interpretar algumas operações em dois tipos de dados diferentes.
+
+#### Exemplo: 
 
 ```python
 len(5)
 
-'legal' + []
+'string' + []
+
+{} + 1.5
 ```
 
 ## IndexError
 
-- Ocorre quando você tenta acessar um elemento em uma lista utilizando um índice inválido
-- Exemplo:
+- Ocorre quando você tenta acessar um elemento em uma lista utilizando um índice inválido.
+
+#### Exemplo:
 
 ```python
-lista = ['teste']
-lista[2]
+lista = [1, 2, 3, 4, 5]
+lista[6]
 ```
 
 ## ValueError
 
-- Ocorre quando uma operação construída ou função recebe um argumento que possui o tipo correto, porém um valor inapropriado
+- Ocorre quando uma operação construída ou função recebe um argumento que possui o tipo correto, porém um valor inapropriado.
+
+#### Exemplo:
 
 ```python
-int('teste')
+int('string')
 ```
 
 ## KeyError
 
-- Ocorre quando um dicionário não tem a chave específica que estamos tentando acessar
+- Ocorre quando um dicionário não tem a chave específica que estamos tentando acessar.
+
+#### Exemplo:
 
 ```python
 d = {}
@@ -63,8 +73,10 @@ d['chave']
 
 ## AttributeError
 
-- Ocorre quando uma variável não tem um atributo
+- Ocorre quando uma variável não tem um atributo.
+
+#### Exemplo:
 
 ```python
-'string teste'.atributo
+'string'.imag
 ```

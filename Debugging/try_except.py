@@ -1,15 +1,15 @@
 try:
-	foobar
+    print(nome)
 except NameError as err:
-	print(err)
+    print(err)
 
-d = {'name': 'gabriel'}
+d = {'nome':'gabriel'}
 
-def get(d,key):
-	try:
-		return d[key]
-	except KeyError:
-		return 'erro de chave'
+def get(dic,key):
+    try:
+        return dic[key]
+    except KeyError:
+        return 'erro de chave'
 
+print(get(d,'nome'))
 print(get(d,'name'))
-print(get(d,'nam'))
