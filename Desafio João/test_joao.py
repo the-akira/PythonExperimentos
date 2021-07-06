@@ -41,4 +41,4 @@ class TestOPrimeiroDoRanking(unittest.TestCase):
         self.assertTrue(tempo_de_execucao < 5) 
 
 if __name__ == '__main__':
-	unittest.main()
+    unittest.main()
