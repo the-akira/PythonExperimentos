@@ -43,8 +43,8 @@ output.grid(row=5, column=0, columnspan=2, sticky=W)
 
 # Dicionário de termos computacionais
 comp_dict = {
-	'algorithm': 'step by step instructions to complete a task',
-	'bug': 'pedaço de código que causa um programa a falhar'
+    'algorithm': 'step by step instructions to complete a task',
+    'bug': 'pedaço de código que causa um programa a falhar'
 }
 
 # Label de saída
