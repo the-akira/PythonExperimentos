@@ -1,6 +1,7 @@
 import re
 
-text_to_search = '''
+# Textos para buscar
+texto = '''
 abcdefghijklmnopqurtuvwxyz
 ABCDEFGHIJKLMNOPQRSTUVWXYZ
 1234567890
@@ -24,6 +25,7 @@ pat
 rat
 bat
 '''
+sentença = 'Iniciar uma sentença e então finalizá-la'
 
 # Raw String
 print(r'\tTab')
@@ -31,33 +33,27 @@ print(r'\tTab')
 # String Comum
 print('\tTab')
 
-sentence = 'Start a sentence and then bring it to an end'
-
-# PADRÕES
-
-#pattern = re.compile(r'start', re.I) # Palavra start
-#pattern = re.compile(r'[89]00[-.*]\d\d\d[-.*]\d\d\d') # Padrão para telefones 
-#pattern = re.compile(r'[1-5]') # Números entre 1-5
-#pattern = re.compile(r'[^a-zA-Z]') # Negação de letras a-z e A-Z
-#pattern = re.compile(r'[^b]at') # Negação do b
+# Padrões
+pattern = re.compile(r'iniciar', re.I) # Palavra iniciar (Ignore case)
+telefone = re.compile(r'[89]00[-.*]\d\d\d[-.*]\d\d\d') # Padrão para telefones 
+pattern = re.compile(r'[1-5]') # Números entre 1-5
+pattern = re.compile(r'[^a-zA-Z]') # Negação de letras a-z e A-Z
+pattern = re.compile(r'[^b]at') # Negação do b
 pattern = re.compile(r'\d{3}.\d{3}.\d{4}') # Outro padrão para telefones
-#pattern = re.compile(r'(Mr|Ms|Mrs)\.?\s[A-Z]\w*') # Padrão para buscar Mr. Mr Ms Mrs.
+pattern = re.compile(r'(Mr|Ms|Mrs)\.?\s[A-Z]\w*') # Padrão para buscar Mr. Mr Ms Mrs.
 
-# MATCHES
-
-#matches = pattern.search(sentence)
-matches = pattern.finditer(text_to_search)
-#matches = pattern.findall(text_to_search)
-#matches = pattern.match(sentence)
-
-# ABRINDO ARQUIVOS
-
-# with open('dados.txt', 'r') as f:
-# 	contents = f.read()
-# 	matches = pattern.finditer(contents)
-
-# 	for match in matches:
-# 		print(match)
+# Correspondências
+matches = pattern.search(sentença)
+matches = pattern.match(sentença)
+matches = pattern.finditer(texto)
+matches = pattern.findall(texto)
 
 for match in matches:
-	print(match)
+    print(match)
+
+# Abrindo um Arquivo
+with open('dados.txt', 'r') as f:
+    contents = f.read()
+    matches = telefone.finditer(contents)
+    for match in matches:
+        print(match)
