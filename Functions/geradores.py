@@ -1,28 +1,25 @@
-def squared_numbers(nums):
-	result = []
-	for i in nums:
-		result.append(i*i)
-	return result
+def números_ao_quadrado(números):
+    resultado = []
+    for n in números:
+        resultado.append(n*n)
+    return resultado
 
-my_nums = squared_numbers([1,2,3,4,5])
-print(my_nums)
+nums = números_ao_quadrado([1,2,3,4,5])
+print(nums)
 
-def square(nums):
-	for i in nums:
-		yield (i*i)
+def gerador_quadrados(números):
+    for n in números:
+        yield(n*n)
 
-num = square([1,2,3,4,5])
-# print(next(num))
-# print(next(num))
-# print(next(num))
-# print(next(num))
+nums = gerador_quadrados([1,2,3,4,5])
+print(next(nums))
+print(next(nums))
+print(next(nums))
+print(next(nums))
+print(next(nums))
 
-for n in num:
-	print(n)
+números = [x*x for x in [1,2,3,4,5]]
+print(list(números))
 
-numeros = [x*x for x in [1,2,3,4,5]]
-
-print(list(numeros))
-
-for nu in numeros:
-	print(nu)
+for n in números:
+    print(n)

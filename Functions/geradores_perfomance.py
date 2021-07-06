@@ -1,42 +1,37 @@
-import memory_profiler as mem_profile
 import random
 import time
 
-names = ['John', 'Corey', 'Adam', 'Steve', 'Rick', 'Thomas']
-majors = ['Math', 'Engineering', 'CompSci', 'Arts', 'Business']
+nomes = ['Gabriel', 'Rafael', 'Muriel', 'Samuel', 'Eliza', 'Maria']
+cursos = ['Math', 'Engineering', 'CompSci', 'Arts', 'Physics']
 
-print('Memory (Before): ' + str(mem_profile.memory_usage()) + 'MB' )
-
-def people_list(num_people):
-    result = []
-    for i in range(num_people):
-        person = {
+def lista_pessoas(n):
+    resultado = []
+    for i in range(n):
+        pessoa = {
                     'id': i,
-                    'name': random.choice(names),
-                    'major': random.choice(majors)
+                    'nome': random.choice(nomes),
+                    'curso': random.choice(cursos)
                 }
-        result.append(person)
-    return result
+        resultado.append(pessoa)
+    return resultado
 
-def people_generator(num_people):
-    for i in range(num_people):
-        person = {
+def gerador_pessoas(n):
+    for i in range(n):
+        pessoa = {
                     'id': i,
-                    'name': random.choice(names),
-                    'major': random.choice(majors)
+                    'nome': random.choice(nomes),
+                    'curso': random.choice(cursos)
                 }
-        yield person
+        yield pessoa
 
-# Com listas
-# t1 = time.perf_counter()
-# people = people_list(1000000)
-# t2 = time.perf_counter()
+# Performance com listas
+t_1 = time.perf_counter()
+people = lista_pessoas(1_000_000)
+t_2 = time.perf_counter()
+print (f'Levou {t_2-t_1} segundos')
 
-# Com Geradores
+# Performance com Geradores
 t1 = time.perf_counter()
-people = people_generator(1000000)
+people = gerador_pessoas(1_000_000)
 t2 = time.perf_counter()
-
-print('Memory (After) : ' + str(mem_profile.memory_usage()) + 'MB')
-
-print ('Took ' + str(t2-t1) + ' Seconds')
+print (f'Levou {t2-t1} segundos')
