@@ -1,90 +1,92 @@
-# Listas
-numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# List Comprehensions
 
+# Definindo uma lista para experimentos
+números = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+# Criando uma lista a partir de uma lista
 # Método comum com lista
-lista = []
-for n in numeros:
-	lista.append(n)
-print(lista)
+l1 = []
+for n in números:
+    l1.append(n)
+print(f'l1 = {l1}')
 
-# Compreensão de lista
-minha_lista = [n for n in numeros]
-print(minha_lista)
+# List Comprehension
+l2 = [n for n in números]
+print(f'l2 = {l2}')
 
+# Elevando todos os itens de uma lista ao quadrado
 # Método comum com lista
-lista_2 = []
-for n in numeros:
-	lista_2.append(n*n)
-print(lista_2)
+l3 = []
+for n in números:
+    l3.append(n*n)
+print(f'l3 = {l3}')
 
-# Compreensão de lista
-minha_lista_2 = [n*n for n in numeros]
-print(minha_lista_2)
+# List Comprehension
+l4 = [n*n for n in números]
+print(f'l4 = {l4}')
 
+# Selecionando apenas os números pares
 # Método comum com lista
-minha_lista_3 = []
-for n in numeros:
-	if n%2 == 0:
-		minha_lista_3.append(n)
-print(minha_lista_3)
+l5 = []
+for n in números:
+    if n%2 == 0:
+        l5.append(n)
+print(f'l5 = {l5}')
 
-# Compreensão de lista
-minha_lista_4 = [n for n in numeros if n%2 == 0]
-print(minha_lista_4)
+# List Comprehension
+l6 = [n for n in números if n%2 == 0]
+print(f'l6 = {l6}')
 
+# Produto Cartesiano
 # Método comum com lista
-minha_lista_5 = []
+l7 = []
 for letra in 'abcd':
-	for num in range(4):
-		minha_lista_5.append((letra,num))
-print(minha_lista_5)
+    for num in range(4):
+        l7.append((letra,num))
+print(f'l7 = {l7}')
 
-# Compreensão de lista
-minha_lista_6 = [(letra,num) for letra in 'abcd' for num in range(4)]
-print(minha_lista_6)
+# List Comprehension
+l8 = [(letra,num) for letra in 'abcd' for num in range(4)]
+print(f'l8 = {l8}')
 
 # Dicionários
 nomes = ['Bruce', 'Clark', 'Peter', 'Logan', 'Wade']
-herois = ['Batman', 'Superman', 'Spiderman', 'Wolverine', 'Deadpool']
+heróis = ['Batman', 'Superman', 'Spiderman', 'Wolverine', 'Deadpool']
 
 # Método comum com dicionários
-meu_dicionario = {}
-for nome, heroi in zip(nomes, herois):
-	meu_dicionario[nome] = heroi
-print(meu_dicionario)
+dicionário = {}
+for nome, herói in zip(nomes, heróis):
+    dicionário[nome] = herói
+print(dicionário)
 
 # Compreensão de dicionários
-dicionario = {nome: heroi for nome, heroi in zip(nomes, herois) if nome != 'Peter'}
+dicionario = {nome: herói for nome, herói in zip(nomes, heróis) if nome != 'Peter'}
 print(dicionario)
 
-# Sets
-nums = [1, 1, 2, 1, 3, 4, 3, 4, 5, 5, 6, 7, 8, 7, 9, 9]
-meu_set = set()
+# Conjuntos
+numbers = [1, 1, 2, 1, 3, 4, 3, 4, 5, 5, 6, 7, 8, 7, 9, 9]
 
 # Método comum com sets
-for n in nums:
-	meu_set.add(n)
-print(meu_set)
+c1 = set()
+for n in numbers:
+    c1.add(n)
+print(f'c1 = {c1}')
 
 # Compreensão de sets
-meu_set_2 = {n for n in nums}
-print(meu_set_2)
+c2 = {n for n in numbers}
+print(f'c2 = {c2}')
 
-# Expressão Geradoras
-numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# Expressão Geradora
+itens = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-# Método comum
-def gen_func(numbers):
-	for n in numbers:
-		yield n*n
+# Método comum através de uma função
+def função_geradora(itens):
+    for n in itens:
+        yield n*n
 
-meu_gerador = gen_func(numbers)
-
-for i in meu_gerador:
-	print(i)
+gerador = função_geradora(itens)
+print(list(gerador))
 
 # Método mais simples para criar um gerador
-gerador = (n*n for n in numbers)
-
-for i in gerador:
-	print(i)
+gerador = (n*n for n in itens)
+print(list(gerador))

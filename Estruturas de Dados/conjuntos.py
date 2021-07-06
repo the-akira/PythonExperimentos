@@ -1,52 +1,53 @@
+# Duas maneiras diferentes de definir um conjunto
 s1 = set([1, 2, 3, 4, 5, 1, 2, 3])
 s2 = {1, 2, 3, 4, 5}
 
+# Adicionando um item ao conjunto s1
 s1.add(6)
+# Atualizando o conjunto s2 com diversos itens
 s2.update([6,7,8])
+# Removendo o item 5 do conjunto s1
 s1.remove(5)
-s1.discard(10) # Não provoca erro caso o valor não exista
+# Descartando um item do conjunto s1
+s1.discard(10) 
 
+# Imprime os conjuntos s1 e s2
 print(s1)
 print(s2)
 
+# Definindo três conjunto: 'x', 'y' e 'z'
 x = {1,2,3}
 y = {2,3,4}
 z = {3,4,5}
 
-k1 = x.intersection(y, z)
-print(k1)
+# Operações em conjuntos
+print(f'Intersecção x, y, z: {x.intersection(y, z)}')
+print(f'Diferença x e y: {x.difference(y)}')
+print(f'Diferença y e x: {y.difference(x)}')
+print(f'Diferença simétrica x e y: {x.symmetric_difference(y)}')
 
-k2 = x.difference(y)
-k3 = y.difference(x)
-k4 = x.symmetric_difference(y)
-print(k2)
-print(k3)
-print(k4)
+# Eliminando itens repetidos de uma lista
+lista = [1, 2, 3, 1, 2, 3]
+lista_sem_repetidos = list(set(lista))
+print(lista_sem_repetidos)
 
-l1 = [1, 2, 3, 1, 2, 3]
+letras = ['a', 'b', 'c', 'a', 'b', 'c']
+letras_sem_repetidos = list(set(letras))
+print(letras_sem_repetidos)
 
-l2 = list(set(l1))
+# Definindo três listas de pessoas
+pessoas = ['Gabriel', 'Rafael', 'Miguel', 'Samuel', 'Maria', 'Luana', 'Sofia', 'Pedro']
+estudantes = ['Gabriel', 'Rafael', 'Maria']
+desenvolvedores = ['Viena', 'Miguel', 'Gabriel', 'Sofia', 'Rafael']
 
-print(l2)
+estudantes_desenvolvedores = set(estudantes).intersection(desenvolvedores)
+print(f'Intersecção entre estudantes e desenvolvedores: {estudantes_desenvolvedores}')
 
-l3 = ['a', 'b', 'c', 'a', 'b', 'c']
+diferença_conjuntos = set(pessoas).difference(estudantes, desenvolvedores)
+print(f'Diferença pessoas, estudantes e desenvolvedores: {diferença_conjuntos}')
 
-l4 = list(set(l3))
-
-print(l4)
-
-empregados = ['Corey', 'Jim', 'Steven', 'April', 'Judy', 'Jenn', 'John', 'Jane']
-membros_academia = ['April', 'John', 'Corey']
-desenvolvedores = ['Judy', 'Corey', 'Steven', 'Jane', 'April']
-
-resultado = set(membros_academia).intersection(desenvolvedores)
-print(resultado)
-
-resultado_2 = set(empregados).difference(membros_academia, desenvolvedores)
-print(resultado_2)
-
-if 'Corey' in set(desenvolvedores):
-	print('encontrado')
-
+# Verificando presença de um item
 # O(n) para lista
 # O(1) para set	
+if 'Gabriel' in set(desenvolvedores):
+    print('Encontra com sucesso!')
