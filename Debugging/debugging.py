@@ -9,7 +9,7 @@ completo += apelido
 print(completo)
 
 # import pdb
-# pdb.set_trace 
+# pdb.set_trace() 
 
 # Também utilizado como:
 # import pdb; pdb.set_trace()
