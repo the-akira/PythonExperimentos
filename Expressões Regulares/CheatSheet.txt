@@ -24,7 +24,6 @@ Quantificadores:
 {3}     - Número Exato
 {3,4}   - Gama de Números (Mínimo, Máximo)
 
-
 Expressão Regular para Email:
 
 [a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+
