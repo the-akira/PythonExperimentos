@@ -16,6 +16,6 @@ with open('colaboradores.csv', 'r') as data:
 html_output += f'<p> Existem atualmente {len(names)} contribuidores.</p>'	
 html_output += '\n<ul>'
 for name in names:
-	html_output += f'\n\t<li>{name}</li>'
+    html_output += f'\n\t<li>{name}</li>'
 html_output += '\n</ul>'
 print(html_output)
