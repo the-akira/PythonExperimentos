@@ -9,8 +9,8 @@ personagem = {
     "mascotes": ("Lobo","Coruja"),
     "magias": None,
     "itens": [
-       {"nome": "poção de mana", "quantidade": 5},
-       {"nome": "poção de vida", "quantidade": 7}
+        {"nome": "poção de mana", "quantidade": 5},
+        {"nome": "poção de vida", "quantidade": 7}
     ]
 }
 

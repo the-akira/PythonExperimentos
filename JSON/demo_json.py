@@ -1,9 +1,9 @@
 import json 
 
 class Cat:
-	def __init__(self, nome, raça):
-		self.nome = nome 
-		self.raça = raça 
+    def __init__(self, nome, raça):
+        self.nome = nome 
+        self.raça = raça 
 
 c = Cat('Charles', 'Persa')
 
