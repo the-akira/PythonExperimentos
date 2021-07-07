@@ -18,10 +18,10 @@ tartaruga.speed(1)
 tartaruga.pen(fillcolor="#2b00ff", pensize=4)
 
 for i in range(150,30,-20):
-	tartaruga.begin_fill()
-	tartaruga.circle(i)
-	tartaruga.end_fill()
-	tartaruga.hideturtle()
+    tartaruga.begin_fill()
+    tartaruga.circle(i)
+    tartaruga.end_fill()
+    tartaruga.hideturtle()
 
 tartaruga.dot(35)
 # Transformando a tartaruga em um círculo

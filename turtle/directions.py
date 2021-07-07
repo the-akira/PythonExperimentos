@@ -3,10 +3,10 @@ import turtle
 t = turtle.Turtle()
 
 def go_to(x,y,align):
-	t.goto(x,y)
-	t.dot(10)
-	t.write(f"({x}, {y})",font=('monaco',15,'bold'),align=f"{align}")
-	t.home()
+    t.goto(x,y)
+    t.dot(10)
+    t.write(f"({x}, {y})",font=('monaco',15,'bold'),align=f"{align}")
+    t.home()
 
 t.hideturtle()
 t.speed(1)

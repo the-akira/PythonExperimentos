@@ -13,8 +13,8 @@ def draw_square(x,y,size,angle,c):
     turtle.fillcolor(c)
     turtle.begin_fill()
     for _ in range(3):
-         turtle.fd(size)
-         turtle.left(120)
+        turtle.fd(size)
+        turtle.left(120)
     turtle.end_fill()
 
 angle = 0
