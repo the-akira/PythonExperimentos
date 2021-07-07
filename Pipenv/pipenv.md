@@ -2,83 +2,82 @@
 
 ## Instalação de Bibliotecas
 
-- pipenv install requests 
+`pipenv install requests` 
 
 ## Ativação do ambiente virtual
 
-- pipenv shell
+`pipenv shell`
 
-## Testando o ambiente virtual
+## Testando o Ambiente Virtual
 
-- acessar o python interactivo
-- import sys
-- sys.executable
+- Abrir o Python Interactivo
+- `import sys`
+- `sys.executable`
 
-## Desativar o ambiente
+## Desativar o Ambiente Virtual
 
-- exit
+- `exit`
 
 ## Executar Python através de um Ambiente Virtual
 
-- pipenv run python
-- pipenv run python script.py
+- `pipenv run python`
+- `pipenv run python script.py`
 
-## Instalando diversos pacotes de uma vez
+## Instalando Diversos Pacotes de uma Vez
 
-- pipenv install -r requirements.txt
+- `pipenv install -r requirements.txt`
 
-## Mostrando nossas dependências
+## Mostrando nossas Dependências
 
-- pipenv lock -r
+- `pipenv lock -r`
 
-## Instalando um pacote somente para desenvolvimento
+## Instalando um Pacote Somente para Desenvolvimento
 
-- pipenv install pytest --dev
+- `pipenv install pytest --dev`
 
-## Desinstalando um pacote
+## Desinstalando um Pacote
 
-- pipenv uninstall requests
+- `pipenv uninstall requests`
 
-## Alterando a versão do Python
+## Alterando a Versão do Python
 
-- Acessar Pipfile
+- Acessar **Pipfile**
 - Alterar a variável **python_version** 
-- Recriando o ambiente pipenv --python 3.7
+- Recriando o ambiente: `pipenv --python 3.7`
 
-## Remover completamente um ambiente virtual
+## Remover Completamente um Ambiente Virtual
 
-- pipenv --rm
+- `pipenv --rm`
 
-## Recriando o ambiente virtual
+## Recriando o Ambiente Virtual
 
-- Dentro do ambiente que foi removido
-- pipenv install
+- Dentro do ambiente que foi removido: `pipenv install`
 
-## Caminho para o ambiente virtual
+## Caminho para o Ambiente Virtual
 
-- pipenv --venv
+- `pipenv --venv`
 
-## Checando por vulnerabilidades nos nossos pacotes
+## Checando por Vulnerabilidades nos Nossos Pacotes
 
-- pipenv check
+- `pipenv check`
 
-## Listando os pacotes e suas dependências
+## Listando os Pacotes e suas Dependências
 
-- pipenv graph
+- `pipenv graph`
 
 ## Atualizar Pipfile.lock
 
-- pipenv lock
+- `pipenv lock`
 
 ## Ignorando Pipfile e usando Pipfile.lock
 
-- pipenv --ignore-pipfile
+- `pipenv --ignore-pipfile`
 
-## Variaveis de Ambiente
+## Variáveis de Ambiente
 
-- Criar arquivo .env
+- Criar arquivo `.env`
 - Definir uma variavel **SECRET_KEY**
-- executar pipenv run python
-- import os
-- os.environ['SECRET_KEY']
-- Sempre lembrar de adicionar .env ao .gitignore
+- executar `pipenv run python`
+- `import os`
+- `os.environ['SECRET_KEY']`
+- Sempre lembrar de adicionar `.env` ao `.gitignore`
