@@ -22,7 +22,6 @@ img_urls = [
 
 t1 = time.perf_counter()
 
-
 def download_image(img_url):
     img_bytes = requests.get(img_url).content
     img_name = img_url.split('/')[3]
@@ -34,7 +33,6 @@ def download_image(img_url):
 
 with concurrent.futures.ThreadPoolExecutor() as executor:
     executor.map(download_image, img_urls)
-
 
 t2 = time.perf_counter()
 
