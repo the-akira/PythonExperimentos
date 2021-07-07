@@ -1,0 +1,7 @@
+total 20
+drwxr-xr-x  2 akira akira 4096 jul  7 13:40 .
+drwxr-xr-x 29 akira akira 4096 jul  7 13:31 ..
+-rw-rw-r--  1 akira akira   65 jul  7 13:39 output.txt
+-rw-rw-r--  1 akira akira    0 jul  7 13:40 resultado.txt
+-rw-r--r--  1 akira akira  530 jul  7 13:39 subprocesso.py
+-rw-r--r--  1 akira akira  218 jul  7 13:39 subprocessos.py
