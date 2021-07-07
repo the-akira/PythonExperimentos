@@ -6,8 +6,6 @@ A programação orientada a objetos tem suas raízes nos anos 1960, mas foi apen
 
 Uma característica de objetos são os procedimentos de um objeto que **podem acessar** e **modificar** com freqüência os **campos de dados** do **objeto** ao qual **estão associados** (objetos têm uma noção de "this" ou "self", dependendo da linguagem). Na Programação Orientada a Objetos, os programas de computador são projetados através da construção de objetos que interagem entre si. As linguagens que implementam Orientação a Objetos são diversas, mas as mais populares são baseadas em **classes**, o que significa que os objetos são **instâncias de classes**, que também determinam seus tipos.
 
----------------------------------------
-
 ## Princípios da Programação Orientada a Objetos
 
 Os princípios mais importantes que guiam a orientação a objetos são:
@@ -16,8 +14,6 @@ Os princípios mais importantes que guiam a orientação a objetos são:
 - **Abstração:** Objetos apenas revelam mecanismos internos relevantes para o uso de outros objetos, ocultando qualquer código de implementação desnecessário. Esse conceito ajuda os desenvolvedores a fazer alterações e adições ao longo do tempo com mais facilidade.
 - **Herança:** Relacionamentos e subclasses entre objetos podem ser atribuídos, permitindo que os desenvolvedores reutilizem uma lógica comum, mantendo uma hierarquia única. Essa propriedade da Orientação a Objetos força uma análise mais completa dos dados, reduz o tempo de desenvolvimento e garante um nível mais alto de precisão.
 - **Polimorfismo:** Os objetos podem assumir mais de uma forma, dependendo do contexto. O programa determinará qual significado ou uso é necessário para cada execução desse objeto, reduzindo a necessidade de duplicar o código.
-
----------------------------------------
 
 ## Classes em Python
 
@@ -40,8 +36,6 @@ As classes são usadas para criar novas estruturas de dados definidas pelo usuá
 
 Pode nos ajudar pensarmos em uma classe como uma idéia de como algo deve ser definido.
 
----------------------------------------
-
 ## Objetos em Python (Instances)
 
 Os objetos podem armazenar dados usando variáveis comuns que pertencem ao objeto. Variáveis que pertencem a um objeto ou classe são chamadas de campos. Os objetos também podem ter funcionalidade usando funções que pertencem a uma classe. Tais funções são chamadas métodos da classe. Essa terminologia é importante porque nos ajuda a diferenciar funções e variáveis independentes e aquelas que pertencem a uma classe ou objeto. Coletivamente, os campos e métodos podem ser chamados de atributos dessa classe.
@@ -58,8 +52,6 @@ Embora você possa fornecer qualquer nome para esse parâmetro, é altamente rec
 
 Para compreendermos melhor o self, imagine que nós temos uma classe chamada **Pessoa** e uma instance dessa classe chamada de `pessoa`. Quando você chama um método desse objeto como `pessoa.metodo(argumento1, argumento2)`, isso é automaticamente convertido pelo Python como `Pessoa.metodo(pessoa, argumento1, argumento2)`. Isso significa que se você tiver um método que não recebe nenhum argumento, você ainda sim terá de ter o argumento **self**.
 
----------------------------------------
-
 ## Definindo uma Classe em Python
 
 Imagine que desejamos criar um jogo com Python e nesse jogo teremos personagens, uma alternativa muito interessante para a solução desse problema seria a definição de uma **class** que irá representar um modelo para criarmos vários personagens.
@@ -68,16 +60,16 @@ Começaremos criando um novo arquivo, chamaremos ele de `personagem.py`
 
 ```python
 class Personagem:
-	"""
-	A class Personagem representa as características de uma identidade personagem em um jogo
-	"""
-	def __init__(self):
-		"""
-		Inicializa as propriedades de um personagem
-		"""
-		self.nome = 'Alucard'
-		self.idade = 120
-		self.vida = 100
+    """
+    A class Personagem representa as características de uma identidade personagem em um jogo
+    """
+    def __init__(self):
+        """
+        Inicializa as propriedades de um personagem
+        """
+        self.nome = 'Alucard'
+        self.idade = 120
+        self.vida = 100
 ```
 
 As definições de class podem aparecer em qualquer lugar do programa, mas geralmente estão no início (após as instruções de importação). Alguns programadores e linguagens preferem colocar cada classe em um módulo próprio - não faremos isso aqui. As regras de sintaxe para uma definição de class são as mesmas que para outras instruções compostas. Há um cabeçalho que começa com a palavra-chave, class, seguido pelo nome da class e termina com dois pontos. Os níveis de recuo nos dizem onde a class termina.
@@ -145,16 +137,16 @@ Podemos tornar nosso construtor de classe mais geral, colocando parâmetros extr
 
 ```python
 class Personagem:
-	"""
-	A class Personagem representa as características de uma identidade personagem em um jogo
-	"""
-	def __init__(self, nome, idade, vida):
-		"""
-		Inicializa as propriedades de um personagem
-		"""
-		self.nome = nome
-		self.idade = idade
-		self.vida = vida
+    """
+    A class Personagem representa as características de uma identidade personagem em um jogo
+    """
+    def __init__(self, nome, idade, vida):
+        """
+        Inicializa as propriedades de um personagem
+        """
+        self.nome = nome
+        self.idade = idade
+        self.vida = vida
 ```
 
 Vejamos agora como podemos utilizar a nossa class:
@@ -170,19 +162,19 @@ Um método se comporta como uma função, mas é invocado em uma instance espec�
 
 ```python
 class Personagem:
-	"""
-	A class Personagem representa as características de uma identidade personagem em um jogo
-	"""
-	def __init__(self, nome, idade, vida):
-		"""
-		Inicializa as propriedades de um personagem
-		"""
-		self.nome = nome
-		self.idade = idade
-		self.vida = vida
+    """
+    A class Personagem representa as características de uma identidade personagem em um jogo
+    """
+    def __init__(self, nome, idade, vida):
+        """
+        Inicializa as propriedades de um personagem
+        """
+        self.nome = nome
+        self.idade = idade
+        self.vida = vida
 
-	def upgrade_vida(self):
-		self.vida += 10
+    def upgrade_vida(self):
+        self.vida += 10
 ```
 
 Vamos agora criar uma nova instance de **Personagem**, examinar seus atributos e testar nosso novo método.
@@ -202,7 +194,7 @@ Podemos, de maneira usual, passar um objeto como parâmetro. Esteja ciente de qu
 
 ```python
 def imprimir_personagem(p):
-	print(f'Nome: {p5.nome}, Idade: {p5.idade}, Vida: {p5.vida}')
+    print(f'Nome: {p5.nome}, Idade: {p5.idade}, Vida: {p5.vida}')
 ```
 
 **imprimir_personagem** recebe um personagem como argumento e formata a saída da maneira que definimos. Para utilizarmos é muito simples:
@@ -223,22 +215,22 @@ Se chamarmos um novo método **str**, o interpretador Python usará nosso códig
 
 ```python
 class Personagem:
-	"""
-	A class Personagem representa as características de uma identidade personagem em um jogo
-	"""
-	def __init__(self, nome, idade, vida):
-		"""
-		Inicializa as propriedades de um personagem
-		"""
-		self.nome = nome
-		self.idade = idade
-		self.vida = vida
+    """
+    A class Personagem representa as características de uma identidade personagem em um jogo
+    """
+    def __init__(self, nome, idade, vida):
+        """
+        Inicializa as propriedades de um personagem
+        """
+        self.nome = nome
+        self.idade = idade
+        self.vida = vida
 
-	def upgrade_vida(self):
-		self.vida += 10
+    def upgrade_vida(self):
+        self.vida += 10
 
-	def __str__(self):
-		return f'Nome: {self.nome}, Idade: {self.idade}, Vida: {self.vida}'
+    def __str__(self):
+        return f'Nome: {self.nome}, Idade: {self.idade}, Vida: {self.vida}'
 ```
 
 Vejamos agora como será o comportamento:
@@ -250,8 +242,6 @@ print(p5) # Nome: Samus, Idade: 30, Vida: 110
 
 Nosso objeto **Personagem** agora tem um método **str** personalizado por nós.
 
----------------------------------------
-
 ## Herança
 
 Herança é o processo pelo qual uma classe assume os atributos e métodos de outra. As classes recém-formadas são chamadas de classes filho, e as classes das quais as classes filho são derivadas são chamadas de classes pai.
@@ -262,18 +252,18 @@ Quando você define uma nova classe, o Python usa **implicitamente** o **object*
 
 ```python
 class Pessoa(object):
-	pass
+    pass
 
 class Pessoa:
-	pass
+    pass
 ```
 
 Vamos agora criar uma nova class que irá extender a funcionalidade de nosso **Personagem**.
 
 ```python
 class Mago(Personagem):
-	def conjurar_magia():
-		print(f'{self.nome} lança uma magia aleatória')
+    def conjurar_magia():
+        print(f'{self.nome} lança uma magia aleatória')
 ```
 
 Para testarmos nossa nova class, vamos definir um novo Mago:
@@ -301,11 +291,11 @@ A Substituição de Método, também conhecida como *Method Overriding* refere-s
 
 ```python
 class Mago(Personagem):
-	def conjurar_magia(self):
-		print(f'{self.nome} lança uma magia aleatória')
+    def conjurar_magia(self):
+        print(f'{self.nome} lança uma magia aleatória')
 
-	def upgrade_vida(self):
-		self.vida += 5
+    def upgrade_vida(self):
+        self.vida += 5
 ```
 
 Agora podemos utilizar o método **upgrade_vida** através do nosso objeto **p6**:
@@ -317,11 +307,9 @@ print(p6) # Nome: Gandalf, Idade: 1000, Vida: 1005
 
 Observe que Python inteligentemente substituiu o método, uma vez que **p6** é uma instance de um **Mago**, ele executará o método **upgrade_vida** (que foi substituído) do **Mago**.
 
----------------------------------------
-
 ## Encapsulamento
 
-Python possui encapsulamento, O que Python não tem é controle de acesso, como atributos **privados** e **protegidos**. No entanto, no Python, existe uma convenção de nomenclatura de atributos para denotar atributos privados, prefixando o atributo com **um** ou **dois** underscores ("_" ou "__").
+Python possui encapsulamento, O que Python não tem é controle de acesso, como atributos **privados** e **protegidos**. No entanto, no Python, existe uma convenção de nomenclatura de atributos para denotar atributos privados, prefixando o atributo com **um** ou **dois** underscores ("_" ou "\__").
 
 Um único underscore indica ao usuário de uma class que um atributo deve ser considerado privado para a class e não deve ser acessado diretamente.
 
@@ -354,19 +342,17 @@ Encapsulamento é o processo de usar variáveis privadas nas classes para impedi
 
 Por meio de variáveis de encapsulamento e determinados métodos, somente é possível interagir com as interfaces designadas pela própria classe.
 
----------------------------------------
-
 ## Polimorfismo
 
 Outro conceito de extrema relevância na programação orientada a objetos é o polimorfismo, que permite usarmos uma interface comum para multiplas formas (tipos de dados). Digamos que a gente queira colorir figurar geométricas, existem diversas opções (quadrados, triângulos, círculos), podemos usar a mesma cor para todas as figuras, é nesse conceito que entra o polimorfismo. Para visualizarmos melhor a ideia, vamos criar novas classes, uma chamada **Criatura**, um **Orc** e um **Minotauro**.
 
 ```python
 class Criatura:
-	def __init__(self, nome):
-		self.nome = nome 
+    def __init__(self, nome):
+        self.nome = nome 
 
-	def informacao(self):
-		raise NotImplementedError("Subclasse deve Implementar o método Abstrato")
+    def informacao(self):
+        raise NotImplementedError("Subclasse deve Implementar o método Abstrato")
 
 class Orc(Criatura):
     def informacao(self):
@@ -383,7 +369,7 @@ A class **Criatura** é o pai das classes **Orc** e **Minotauro**, com ela inici
 criaturas = [Orc('Orc 1'), Orc('Orc 2'), Minotauro('Minotauro')]
 
 for criatura in criaturas:
-	print(f'Nome: {criatura.nome}, Informações: {criatura.informacao()}')
+    print(f'Nome: {criatura.nome}, Informações: {criatura.informacao()}')
 ```
 
 Nos é retornado:
@@ -396,8 +382,6 @@ Nome: Minotauro, Informações: Criatura poderosa que vive nos labirintos
 
 Temos então um ponto de acesso abstrato (Criatura) para muitos tipos de objetos (orc, minotauro) que seguem a mesma estrutura.
 
----------------------------------------
-
 ## Vantanges de Orientação a Objetos
 
 - **Agrupar dados em pacotes** juntamente de procedimentos que opera neles através de interfaces bem-definidas
@@ -408,8 +392,6 @@ Temos então um ponto de acesso abstrato (Criatura) para muitos tipos de objetos
 	- Muitos módulos de Python definem novas classes
 	- Cada classe tem um ambiente separado (sem colisão com nomes de função)
 	- Herança permite subclasses redefinirem ou extenderem um selecionado subconjunto de comportamento da superclasse
-
----------------------------------------
 
 ## Conclusão
 

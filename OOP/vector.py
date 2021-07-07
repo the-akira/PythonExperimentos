@@ -1,10 +1,10 @@
 class Vector:
-	def __init__(self, x, y):
-		self.x = x 
-		self.y = y 
+    def __init__(self, x, y):
+        self.x = x 
+        self.y = y 
 
-	def __repr__(self):
-		return f'{self.__class__} ({self.x}, {self.y})'
+    def __repr__(self):
+        return f'{self.__class__} ({self.x}, {self.y})'
 
 # >>> from vector import *
 # >>> v = Vector(5, 3)
@@ -20,7 +20,6 @@ class Vector:
 # >>> 'y' in v.__dict__
 # >>> v.__dict__['z'] = 13
 # >>> v.z
-
 # >>> getattr(v, 'y')
 # >>> hasattr(v, 'x')
 # >>> delattr(v, 'z')
