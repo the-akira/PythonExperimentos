@@ -257,7 +257,6 @@ def consensus():
 
 @app.route('/nodes/sync', methods=['POST'])
 def get_current_chain():
-
     value = request.get_json(force="true")
 
     nodes = value.get("nodes")
