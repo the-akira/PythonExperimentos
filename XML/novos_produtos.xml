@@ -18,9 +18,9 @@
         <shipping>$4.00</shipping> 
     </product>
     <product id="4">
-        <name>Calca Python</name>
-        <description>Muito legais</description>
-        <cost>39.11</cost>
+        <name>Livro Python</name>
+        <description>Aprenda a linguagem Python</description>
+        <cost>39.50</cost>
         <shipping>3.00</shipping>
     </product>
 </productListing>
