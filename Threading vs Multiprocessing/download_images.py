@@ -30,7 +30,6 @@ def download_image(img_url):
         img_file.write(img_bytes)
         print(f'{img_name} was downloaded...')
 
-
 with concurrent.futures.ThreadPoolExecutor() as executor:
     executor.map(download_image, img_urls)
 
