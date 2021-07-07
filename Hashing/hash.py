@@ -6,6 +6,6 @@ pwd = b'SecretPass'
 hashed = bcrypt.hashpw(password, bcrypt.gensalt(rounds=12)) 
 
 if bcrypt.checkpw(password, hashed):
-	print('It matches!')
+    print('Correspondente!')
 else:
-	print('Did not match')
+    print('Não correspondente!')

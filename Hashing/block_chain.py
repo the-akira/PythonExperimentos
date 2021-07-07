@@ -1,8 +1,10 @@
+from flask import Flask, jsonify, request
+from urllib.parse import urlparse
+from uuid import uuid4
+from time import time
+import requests
 import hashlib
 import json
-from time import time
-from uuid import uuid4
-from flask import Flask, jsonify, request
 
 class Blockchain(object):
     def __init__(self):
@@ -252,6 +254,31 @@ def consensus():
         }
 
     return jsonify(response), 200
+
+@app.route('/nodes/sync', methods=['POST'])
+def get_current_chain():
+
+    value = request.get_json(force="true")
+
+    nodes = value.get("nodes")
+
+    if nodes:
+        answer = value['nodes']
+        parsed_url = urlparse(answer).netloc
+
+        response = requests.get('http://{}/chain'.format(parsed_url))
+
+        if response.status_code == 200:
+            length = response.json()['length']
+            blockchain.chain = response.json()['chain']  
+
+            new_chain = {
+                "message": "Sync successful.",
+                "chain": blockchain.chain,
+                "length": len(blockchain.chain)
+            }
+
+            return jsonify(new_chain), 201
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
