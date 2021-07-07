@@ -1,23 +1,23 @@
 import socket
 
-def Main():
-	host = '127.0.0.1'
-	port = 555
+# Servidor UDP (Executar como Admin)
 
-	s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-	s.bind((host,port))
+host = "127.0.0.1"
+port = 20001
+buffer = 1024
+message = "Hello UDP Client!"
+bytes_to_send = str.encode(message)
 
-	print("Server Started")
+udp_socket = socket.socket(family=socket.AF_INET, type=socket.SOCK_DGRAM)
+udp_socket.bind((host, port))
+print("UDP Server UP and Listening!")
 
-	while True:
-		data, addr = s.recvfrom(1024)
-		data = data.decode('utf-8')
-		print("Message from: "+str(addr))
-		print("From connected user: "+data)
-		data = data.upper()
-		print("Sending: "+data)
-		s.sendto(data.encode('utf-8'), addr)
-	c.close()
-
-if __name__ == '__main__':
-	Main()
+while(True):
+    bytes_address_pair = udp_socket.recvfrom(buffer)
+    message = bytes_address_pair[0]
+    address = bytes_address_pair[1]
+    client_msg = "Message from Client: {}".format(message)
+    client_ip  = "Client IP Address: {}".format(address) 
+    print(client_msg)
+    print(client_ip)
+    udp_socket.sendto(bytes_to_send, address)

@@ -1,25 +1,14 @@
 import socket
 
-# Rodar com python3
+# Cliente UDP (Executar como Admin)
 
-def Main():
-	host = '127.0.0.1'
-	port = 556
+message = "Hello UDP Server!"
+bytes_to_send = str.encode(message)
+server_address_port = ("127.0.0.1", 20001)
+buffer = 1024
 
-	server = ('127.0.0.1', 555)
-
-	s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-
-	s.bind((host,port))
-
-	message = input("-> ")
-	while message != 'q':
-		s.sendto(message.encode('utf-8'), server)
-		data, addr = s.recvfrom(1024)
-		data = data.decode('utf-8')
-		print("Received from server: "+data)
-		message = input("-> ")
-	s.close()
-
-if __name__ == '__main__':
-	Main()
+udp_socket = socket.socket(family=socket.AF_INET, type=socket.SOCK_DGRAM)
+udp_socket.sendto(bytes_to_send, server_address_port)
+server_msg = udp_socket.recvfrom(buffer)
+msg = "Message from Server: {}".format(server_msg[0])
+print(msg)
