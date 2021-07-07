@@ -14,23 +14,23 @@ def create_table(conn, create_table_sql):
 
 sql_create_authors_table = """
 CREATE TABLE IF NOT EXISTS authors(
-	id integer PRIMARY KEY,
-	name text NOT NULL,
-	born_date text
+    id integer PRIMARY KEY,
+    name text NOT NULL,
+    born_date text
 );
 """
 
 sql_create_books_table = """
 CREATE TABLE IF NOT EXISTS books(
-	id integer PRIMARY KEY,
-	title text NOT NULL,
-	author_id integer NOT NULL,
-	FOREIGN KEY (author_id) REFERENCES authors (id)
+    id integer PRIMARY KEY,
+    title text NOT NULL,
+    author_id integer NOT NULL,
+    FOREIGN KEY (author_id) REFERENCES authors (id)
 );
 """
 
 if conn is not None:
-	create_table(conn, sql_create_authors_table)
-	create_table(conn, sql_create_books_table)
+    create_table(conn, sql_create_authors_table)
+    create_table(conn, sql_create_books_table)
 else:
-	print('Error! Cannot create the database!')
+    print('Error! Cannot create the database!')
