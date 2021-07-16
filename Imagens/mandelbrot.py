@@ -14,8 +14,7 @@ def mandelbrot(height, width, x=-0.5, y=0, zoom=1, max_iterations=100):
     x = np.linspace(x_from, x_to, width).reshape((1, width))
     y = np.linspace(y_from, y_to, height).reshape((height, 1))
     c = x + 1j * y
-
-    # Inicializar z para zero
+    # Inicializar z para zeros
     z = np.zeros(c.shape, dtype=np.complex128)
     # Para acompanhar em qual iteração o ponto divergiu
     div_time = np.zeros(z.shape, dtype=int)
@@ -24,9 +23,8 @@ def mandelbrot(height, width, x=-0.5, y=0, zoom=1, max_iterations=100):
 
     for i in range(max_iterations):
         z[m] = z[m]**2 + c[m]
-
-        diverged = np.greater(np.abs(z), 2, out=np.full(c.shape, False), where=m) # Find diverging
-
+        # Encontrar divergentes
+        diverged = np.greater(np.abs(z), 2, out=np.full(c.shape, False), where=m) 
         div_time[diverged] = i   # definir o valor do número de iteração divergente
         m[np.abs(z) > 2] = False # para lembrar quais divergiram
     return div_time
