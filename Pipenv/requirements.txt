@@ -10,4 +10,4 @@ django-crispy-forms==1.7.2
 django==2.2.24
 pillow==8.2.0
 pytz==2018.5
-sqlparse==0.4.1; python_version >= '3.5'
+sqlparse==0.4.2
