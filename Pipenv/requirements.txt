@@ -8,6 +8,6 @@
 -i https://pypi.org/simple/
 django-crispy-forms==1.7.2
 django==2.2.27
-pillow==9.0.0
+pillow==9.0.1
 pytz==2018.5
 sqlparse==0.4.2; python_version >= '3.5'
