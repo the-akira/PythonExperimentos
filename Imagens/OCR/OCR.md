@@ -1,5 +1,7 @@
 # Optical Character Recognition (OCR)
 
+![img](https://raw.githubusercontent.com/the-akira/PythonExperimentos/master/Imagens/OCR/ocr.png)
+
 **Optical Character Recognition** (OCR) é o processo que converte uma imagem de texto em um formato de texto legível por máquina. Por exemplo, se você digitalizar um formulário ou recibo, seu computador salvará a digitalização como um arquivo de imagem. Você não pode usar um editor de texto para editar, pesquisar nem contar as palavras no arquivo de imagem. No entanto, você pode usar o OCR para converter a imagem em um documento de texto com o conteúdo armazenado como dados de texto.
 
 Amplamente utilizado como forma de entrada de dados a partir de registros de dados impressos em papel – sejam documentos de passaporte, faturas, extratos bancários, recibos computadorizados, cartões de visita, correspondência, impressões de dados estáticos ou qualquer documentação adequada – é um método comum de digitalização de textos impressos para que possam ser editados eletronicamente, pesquisados, armazenados de forma mais compacta, exibidos online e usados em processos de máquina, como computação cognitiva, tradução automática, conversão de texto em fala (extraído), dados-chave e mineração de texto. OCR é um campo de pesquisa em reconhecimento de padrões, inteligência artificial e visão computacional.
