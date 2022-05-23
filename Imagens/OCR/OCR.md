@@ -66,9 +66,9 @@ of the earth).
 """
 ```
 
-A conclusão que pode ser obtida é que o Tesseract é mais adequado na construção de um pipeline de processamento de documentos onde as imagens são digitalizadas e processadas. Isso funciona melhor para situações com *input* de alta resolução em que o texto em primeiro plano é segmentado com precisão a partir do plano de fundo.
+ Tesseract pode ser adequado na construção de um [pipeline](https://en.wikipedia.org/wiki/Pipeline_(computing)) de processamento de documentos onde as imagens são digitalizadas e processadas. Isso funciona melhor para situações com *input* de alta resolução em que o texto em primeiro plano é segmentado com precisão a partir do plano de fundo.
 
-### Referências
+## Referências
 
 - [O que é OCR?](https://aws.amazon.com/pt/what-is/ocr/)
 - [Build Optical Character Recognition (OCR) in Python](https://towardsdatascience.com/build-optical-character-recognition-ocr-in-python-28d1c7b77da3)
