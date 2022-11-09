@@ -8,20 +8,20 @@ def lista_pessoas(n):
     resultado = []
     for i in range(n):
         pessoa = {
-                    'id': i,
-                    'nome': random.choice(nomes),
-                    'curso': random.choice(cursos)
-                }
+            'id': i,
+            'nome': random.choice(nomes),
+            'curso': random.choice(cursos)
+        }
         resultado.append(pessoa)
     return resultado
 
 def gerador_pessoas(n):
     for i in range(n):
         pessoa = {
-                    'id': i,
-                    'nome': random.choice(nomes),
-                    'curso': random.choice(cursos)
-                }
+            'id': i,
+            'nome': random.choice(nomes),
+            'curso': random.choice(cursos)
+        }
         yield pessoa
 
 # Performance com listas
