@@ -21,6 +21,7 @@ ma = Marshmallow(app)
 migrate = Migrate()
 migrate.init_app(app, db)
 app.app_context().push()
+db.init_app(app)
 
 class Author(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -48,8 +49,12 @@ class BookSchema(ma.Schema):
 book_schema = BookSchema()
 books_schema = BookSchema(many=True)
 
+with app.app_context():
+    db.create_all()
+
 @app.route('/', methods=['GET'])
 def home():
+    app.logger.info("Books API")
     return {
         "API":"Books and Authors",
         "Creator": "ChatGPT"
@@ -142,5 +147,4 @@ def delete_book(book_id):
         return "Book not found", 404
 
 if __name__ == '__main__':
-    db.create_all()
     app.run(debug=True)
