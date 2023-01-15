@@ -41,7 +41,7 @@ And then create the database
 
 ## Testing
 
-To run the tests you must change the TESTING field of the `.env` file to **True**.
+To run the tests you must change the TESTING field of the `.env` file to **True**
 
 ```
 python tests.py
