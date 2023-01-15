@@ -10,6 +10,6 @@ with open('data/books.csv', mode='r') as infile:
 
 for book in books:
     author = Author.query.get_or_404(int(book["author"]))
-    book = Book(title=book["title"], genre=book["genre"], author=author)
+    book = Book(title=book["title"], genre=book["genre"], author_id=author.id)
     db.session.add(book)
     db.session.commit()

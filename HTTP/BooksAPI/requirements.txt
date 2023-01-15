@@ -5,3 +5,4 @@ marshmallow-sqlalchemy
 psycopg2
 python-dotenv
 flask_migrate
+sqlalchemy<2.0
