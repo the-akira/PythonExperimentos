@@ -261,6 +261,97 @@ class TestBooks(unittest.TestCase):
         self.assertEqual(response_data[1]['title'], 'Book2')
         self.assertEqual(response_data[1]['genre'], 'Non-Fiction')
 
+    def test_get_books_by_genre(self):
+        author = Author(name='Author1')
+        db.session.add(author)
+        db.session.commit()
+
+        self.book_data = {
+            "title": "The Great Gatsby",
+            "genre": "Fiction",
+            "author_id": author.id
+        }
+        self.book_data_two = {
+            "title": "The Lord of the Rings",
+            "genre": "Fantasy",
+            "author_id": author.id
+        }
+        self.book_data_three = {
+            "title": "The Catcher in the Rye",
+            "genre": "Fiction",
+            "author_id": author.id
+        }
+
+        self.client.post('/books', json=self.book_data)
+        self.client.post('/books', json=self.book_data_two)
+        self.client.post('/books', json=self.book_data_three)
+
+        response = self.client.get('/books/genre/Fiction')
+        data = json.loads(response.data)
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(data[0]['title'], self.book_data['title'])
+        self.assertEqual(data[0]['genre'], self.book_data['genre'])
+        self.assertEqual(data[1]['title'], self.book_data_three['title'])
+        self.assertEqual(data[1]['genre'], self.book_data_three['genre'])
+
+    def test_search_books(self):
+        author = Author(name='Author1')
+        db.session.add(author)
+        db.session.commit()
+
+        self.book_data = {
+            "title": "The Great Gatsby",
+            "genre": "Fiction",
+            "author_id": author.id
+        }
+        self.book_data_two = {
+            "title": "The Lord of the Rings",
+            "genre": "Fantasy",
+            "author_id": author.id
+        }
+        self.book_data_three = {
+            "title": "The Catcher in the Rye",
+            "genre": "Fiction",
+            "author_id": author.id
+        }
+
+        self.client.post('/books', json=self.book_data)
+        self.client.post('/books', json=self.book_data_two)
+        self.client.post('/books', json=self.book_data_three)
+
+        response = self.client.get('/books/search?title=The')
+        data = json.loads(response.data)
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(data[0]['title'], self.book_data['title'])
+        self.assertEqual(data[0]['genre'], self.book_data['genre'])
+        self.assertEqual(data[1]['title'], self.book_data_two['title'])
+        self.assertEqual(data[1]['genre'], self.book_data_two['genre'])
+        self.assertEqual(data[2]['title'], self.book_data_three['title'])
+        self.assertEqual(data[2]['genre'], self.book_data_three['genre'])
+
+    def test_search_authors(self):
+        self.author_data = {
+            "name": "J.K. Rowling"
+        }
+        self.author_data_two = {
+            "name": "Stephen King"
+        }
+        self.author_data_three = {
+            "name": "Steve Dark"
+        }
+        self.client.post('/authors', json=self.author_data)
+        self.client.post('/authors', json=self.author_data_two)
+        self.client.post('/authors', json=self.author_data_three)
+
+        response = self.client.get('/authors/search?name=S')
+        data = json.loads(response.data)
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(data[0]['name'], self.author_data_two['name'])
+        self.assertEqual(data[1]['name'], self.author_data_three['name'])
+
 testing = (os.getenv('TESTING', 'False') == 'True')
 
 if __name__ == '__main__' and testing:

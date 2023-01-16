@@ -82,7 +82,8 @@ def get_author(author_id):
 def update_author(author_id):
     author = db.get_or_404(Author, author_id)
     data = request.get_json()
-    author.name = data["name"]
+    if 'name' in data:
+        author.name = data["name"]
     db.session.commit()
     return author_schema.jsonify(author)
 
@@ -116,6 +117,11 @@ def get_book(id):
     book = db.get_or_404(Book, id)
     return book_schema.jsonify(book)
 
+@app.route('/books/genre/<string:genre>', methods=['GET'])
+def get_books_by_genre(genre):
+    books = db.session.execute(db.select(Book).filter_by(genre=genre.title())).scalars()
+    return books_schema.jsonify(books)
+
 @app.route('/book/author/<author_id>', methods=['GET'])
 def get_book_by_author_id(author_id):
     author = db.get_or_404(Author, author_id)
@@ -145,6 +151,20 @@ def delete_book(book_id):
         return "Book deleted", 200
     else:
         return "Book not found", 404
+
+@app.route('/books/search', methods=['GET'])
+def search_books():
+    title = request.args.get('title')
+    books = db.session.execute(
+        db.select(Book).filter(Book.title.ilike(f'%{title}%'))).scalars()
+    return books_schema.jsonify(books)
+
+@app.route('/authors/search', methods=['GET'])
+def search_authors():
+    name = request.args.get('name')
+    authors = db.session.execute(
+        db.select(Author).filter(Author.name.ilike(f'%{name}%'))).scalars()
+    return authors_schema.jsonify(authors)
 
 if __name__ == '__main__':
     app.run(debug=True)
