@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h1 class="main-title">Sistema Gerenciador de Notas</h1>
+<h2>Turmas Cadastradas</h2>
+<div class="classes">
+{% for classroom in classrooms %}
+    <div class="single-class">
+        <a class="class-link" href="/classroom/{{ classroom.id }}/students">{{ classroom.name }} ({{ classroom.time }})</a>
+        <form action="/delete_classroom/{{ classroom.id }}" method="post" style="display: inline;">
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="submit" class="remove-class" value="Remover" onclick="return confirm('Are you sure you want to delete this classroom?');" />
+        </form>
+    </div>
+{% endfor %}
+<div>
+{% endblock %}

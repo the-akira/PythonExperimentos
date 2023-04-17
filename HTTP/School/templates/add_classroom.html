@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="classroom-register">
+    <h1>Cadastrar Turma</h1>
+    <form action="/add_classroom" method="post">
+        <label for="name">Nome da Turma: </label>
+        <input type="text" id="name" name="name" required><br>
+        <label for="time">Horário da Turma: </label>
+        <input type="text" id="time" name="time" required><br>
+        <input class="add-classroom" type="submit" value="Cadastrar">
+    </form>
+</div>
+{% endblock %}

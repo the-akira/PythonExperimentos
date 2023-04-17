@@ -1,0 +1,306 @@
+body {
+  background: #c5cfdb;
+}
+
+.main-content {
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+nav > a {
+  border: 2px solid black;
+  margin-right: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  background: #d6f3ff;
+  color: #000;
+}
+
+nav > a:hover {
+  background: #d1ffd5;
+}
+
+.classes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px;
+}
+
+.single-class {
+  background-color: #f2f2f2;
+  border: 2px solid #273E74;
+  margin: 10px;
+  padding: 22px 15px 22px 15px;
+  width: 400px;
+  text-align: center
+}
+
+.remove-class {
+  margin-left: 10px;
+  background: #d91002;
+  border: 2px solid black;
+  padding: 8px;
+  color: white;
+  font-size: 1.1rem;
+}
+
+.remove-class:hover {
+  cursor: pointer;
+}
+
+.class-link {
+  display: inline-block;
+  font-size: 1.1rem;
+  color: black;
+  background: #d6f3ff;
+  border: 2px solid black;
+  padding: 8px;
+  color: black;
+  text-decoration: none;
+  width: 150px;
+}
+
+.class-link:hover {
+  background: #d1ffd5;
+}
+
+.classroom-register {
+  flex-direction: column;
+  background-color: #f2f2f2;
+  border: 2px solid black;
+  padding: 8px;
+  margin: 0 auto;
+  margin-top: 30px;
+  width: 80%; 
+}
+
+.classroom-register > h1 {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.classroom-register > form > label {
+  display: block;
+  margin-top: 5px;
+}
+
+.classroom-register > form > 
+input[name="name"], 
+input[name="time"] {
+  height: 20px;
+  width: 60%;
+  margin-top: 3px;
+}
+
+.add-classroom {
+  background: #d6f3ff;
+  border: 2px solid #273E74;
+  margin-top: 10px;
+  margin-bottom: 11px;
+  padding: 7px;
+  font-size: 1.2rem;
+}
+
+.add-classroom:hover {
+  background: #d1ffd5;
+  cursor: pointer;
+}
+
+.class-name {
+  margin-bottom: 0px;
+}
+
+.student-name {
+  margin-top: 0px;
+  margin-bottom: 3px;
+  font-size: 1.3rem;
+}
+
+.grades {
+  margin-top: 12px;
+  margin-bottom: 12px;
+  font-size: 1.15rem;
+}
+
+.remove-student {
+  margin-left: 10px;
+  background: #d91002;
+  border: 2px solid black;
+  padding: 8px;
+  color: white;
+  font-size: 1.1rem;  
+}
+
+.remove-student:hover {
+  cursor: pointer;
+}
+
+.add-grade {
+  display: inline-block;
+  font-size: 1.1rem;
+  color: black;
+  background: #d6f3ff;
+  border: 2px solid black;
+  padding: 8px;
+  color: black;
+  text-decoration: none;
+  width: 150px;
+}
+
+.add-grade:hover {
+  background: #d1ffd5;
+}
+
+.student-register {
+  flex-direction: column;
+  background-color: #f2f2f2;
+  border: 2px solid black;
+  padding: 8px;
+  margin: 0 auto;
+  margin-top: 30px;
+  width: 80%;  
+}
+
+.student-register > h1 {
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+.student-register > form > label {
+  display: block;
+  margin-top: 5px;
+}
+
+.add-student {
+  background: #d6f3ff;
+  border: 2px solid #273E74;
+  margin-top: 10px;
+  margin-bottom: 8.8px;
+  padding: 7px;
+  font-size: 1.2rem;
+}
+
+.add-student:hover {
+  background: #d1ffd5;
+  cursor: pointer;
+}
+
+.student-register > form > 
+input[name="name"] {
+  height: 20px;
+  width: 60%;
+  margin-top: 3px;
+}
+
+.student-register > h2 {
+  margin-top: 10px;
+}
+
+.export {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px;
+}
+
+.csv, .json, .yaml, .xml, .excel {
+  background-color: #f2f2f2;
+  border: 2px solid #273E74;
+  margin: 10px;
+  padding: 22px 15px 22px 15px;
+  width: 400px;
+  text-align: center 
+}
+
+.csv > h2, 
+.json > h2, 
+.yaml > h2, 
+.xml > h2, 
+.excel > h2 {
+  margin-top: 0px;
+}
+
+.export-btn {
+  display: inline-block;
+  font-size: 1.1rem;
+  color: black;
+  background: #d6f3ff;
+  border: 2px solid black;
+  padding: 8px;
+  color: black;
+  text-decoration: none;
+  width: 150px; 
+}
+
+.export-btn:hover {
+  background: #d1ffd5;
+  cursor: pointer;
+}
+
+.grade-register {
+  flex-direction: column;
+  background-color: #f2f2f2;
+  border: 2px solid black;
+  padding: 8px;
+  margin: 0 auto;
+  margin-top: 30px;
+  width: 80%;  
+}
+
+.grade-register > h1 {
+  margin-top: 5px;
+  margin-bottom: 12px;
+}
+
+.grade-register > form > label {
+  display: block;
+  margin-top: 5px;
+}
+
+.grade-register > form > 
+input[name="grade"] {
+  height: 20px;
+  width: 60%;
+  margin-top: 3px;
+}
+
+.add-grade {
+  background: #d6f3ff;
+  border: 2px solid #273E74;
+  margin-top: 13px;
+  margin-bottom: 10px;
+  padding: 7px;
+  font-size: 1.2rem;
+}
+
+.add-grade:hover {
+  background: #d1ffd5;
+  cursor: pointer;
+}
+
+@media (max-width: 400px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav > a {
+    margin-right: 0px;
+    width: 50%;
+    text-align: center;
+  }
+
+  nav > a:nth-child(2) {
+    margin-top: 15px;
+  }
+
+  .class-link {
+    margin-bottom: 15px;
+  }
+}

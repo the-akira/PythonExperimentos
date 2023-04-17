@@ -1,0 +1,68 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h1 class="class-name">Turma: {{ classroom.name }} ({{ classroom.time }})</h1>
+<div class="classes">
+    {% for student in students %}
+        <div class="single-class">
+            <p class="student-name"><b>Nome:</b> {{ student.name }}</p> <p class="grades"><b>Notas:</b> 
+            {% for grade in student.grades %}
+                {{ grade.value }}{% if not loop.last %}, {% endif %}
+            {% endfor %}</p>
+            <a class="add-grade" href="{{ url_for('add_grade', student_id=student.id) }}">Adicionar Nota</a>
+            <form action="/remove_student" method="post" style="display: inline;">
+                <input type="hidden" name="student_id" value="{{ student.id }}" />
+                <input type="hidden" name="classroom_id" value="{{ classroom.id }}" />
+                <input type="submit" class="remove-student" value="Remover Estudante" onclick="return confirm('Are you sure you want to delete this student?');" />
+            </form>
+        </div>
+    {% endfor %}
+</div>
+
+<div class="student-register">
+    <h2>Cadastrar Estudante</h2>
+    <form action="/add_student" method="post">
+        <input type="hidden" name="classroom_id" value="{{ classroom.id }}" />
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name" required/><br />
+        <input class="add-student" type="submit" value="Cadastrar" />
+    </form>
+</div>
+
+<div class="export">
+    <div class="csv">
+        <h2>Exportar como CSV</h2>
+        <form action="/export_csv/{{ classroom.id }}" method="get">
+            <input class="export-btn" type="submit" value="Exportar" />
+        </form>
+    </div>
+
+    <div class="json">
+        <h2>Exportar como JSON</h2>
+        <form action="/export_json/{{ classroom.id }}" method="get">
+            <input class="export-btn" type="submit" value="Exportar" />
+        </form>
+    </div>
+
+    <div class="yaml">
+        <h2>Exportar como YAML</h2>
+        <form action="/export_yaml/{{ classroom.id }}" method="get">
+            <input class="export-btn" type="submit" value="Exportar" />
+        </form>
+    </div>
+
+    <div class="xml">
+        <h2>Exportar como XML</h2>
+        <form action="/export_xml/{{ classroom.id }}" method="get">
+            <input class="export-btn" type="submit" value="Exportar" />
+        </form>
+    </div>
+
+    <div class="excel">
+        <h2>Exportar como Excel</h2>
+        <form action="/export_excel/{{ classroom.id }}" method="get">
+            <input class="export-btn" type="submit" value="Exportar" />
+        </form>
+    </div>
+</div> 
+{% endblock %}

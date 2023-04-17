@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="grade-register">
+    <h1>Adicionar Nota ({{ student.name }})</h1>
+    <form action="/insert_grade" method="post">
+        <input type="hidden" name="student_id" value="{{ student.id }}" />  <!-- Hidden field to store student_id -->
+        <label for="grade">Nota:</label>
+        <input type="number" id="grade" name="grade" max="10" required/><br />
+        <input class="add-grade" type="submit" value="Adicionar" />
+    </form>
+</div>
+{% endblock %}
